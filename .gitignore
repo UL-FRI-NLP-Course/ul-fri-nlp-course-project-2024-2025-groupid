@@ -2,6 +2,9 @@
 data/raw
 models/
 
+# Too big
+data/processed/events.json
+
 # Default
 # Byte-compiled / optimized / DLL files
 __pycache__/

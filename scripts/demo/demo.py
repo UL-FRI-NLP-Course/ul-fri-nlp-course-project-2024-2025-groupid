@@ -8,7 +8,8 @@ model_id = ("cjvt/GaMS-1B")
 pline = pipeline(
     "text-generation",
     model=model_id,
-    device_map="auto"
+    device_map={"": 0},
+    torch_dtype=torch.float16
 )
 
 prompts = ["""

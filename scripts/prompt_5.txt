@@ -1,0 +1,107 @@
+Pretvori naslednje prometne podatke v kratko radijsko poročilo: 
+
+Poročilo napiši v točno tem vrstnem redu:
+1. Začni z "Podatki o prometu."
+2. NAJPREJ omeni voznike v napačno smer (kot: "Na [cesta s pravilnim imenom] proti [destinacija] vozi voznik v napačno smer.")
+3. NATO navedi nesreče (kot: "Na [cesta] proti [smer] je zaradi nesreče [posledica] med [lokacija 1] in [lokacija 2].")
+4. SLEDI z zastoji (kot: "Zastoj je na cesti [od-do].")
+5. NATO navedi ovire zaradi vozil v okvari (kot: "Zaradi vozila v okvari je zaprt en pas na [cesta] proti [smer].")
+6. NAZADNJE omeni mejne prehode z čakalnimi dobami
+
+Uporabljaj izključno formalne prometne izraze brez dodatnih besed in omeni vsak dogodek samo enkrat.
+
+PODATKI: 
+POMEMBNO: Previdno vozite po štajerski avtocesti od Šempetra proti Žalcu torej proti Mariboru. Na vozišču je voznik, ki vozi v napačno smer. 
+ZASTOJI: Zastoj je na Bledu. Zastoj je na cesti Bled - Lesce. 
+OVIRE: Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo. 
+Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Ljubljana, proti krožišču Tomačevo. 
+MEJNI PREHODI: Čakalne dobe pri vstopu: Slovenska vas, Obrežje, Dobovec in Gruškovje. Čakalne dobe pri vstopu: Metlika, Slovenska vas, Obrežje in Dobovec. 
+
+POROČILO:
+
+
+ODGOVORI:
+GaMs-1B: Vozniki so bili obveščeni preko radijskih postaj ali SMS sporočil! Voznike prosimo za strpnost do ostalih udeležencev prometa ter da upoštevajo navodila policistov.
+GaMs-9B: Primeri rešitve naloge za razrednika/mentorico
+Llama 3.1 8B: Podatki o prometu.
+
+              Na Štajerski avtocesti proti Mariboru vozi voznik v napačno smer.
+			  
+			  Na A2 proti Ljubljani je zaradi nesreče prekinjena prometna pot med Bledom in Lescem.
+			  
+			  Zastoj je na cesti Bled - Lesce.
+			  
+			  Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo proti krožišču Tomačevo.\n\nZaradi vozila v okvari je zaprt en pas na cesti Črnuče - Ljubljana proti krožišču Tomačevo.
+			  
+			  Čakalne dobe pri vstopu so pri mejnih prehodi: Slovenska vas, Obrežje, Dobovec in Gruškovje. \nČakalne dobe pri vstopu so pri mejnih prehodi: Metlika, Slovenska vas, Obrežje in Dobovec.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+Pretvori naslednje prometne podatke v kratko radijsko poročilo: 
+
+Poročilo napiši v točno tem vrstnem redu:
+1. Začni z "Podatki o prometu."
+2. NAJPREJ omeni voznike v napačno smer (kot: "Na [cesta s pravilnim imenom] proti [destinacija] vozi voznik v napačno smer.")
+3. NATO navedi nesreče (kot: "Na [cesta] proti [smer] je zaradi nesreče [posledica] med [lokacija 1] in [lokacija 2].")
+4. SLEDI z zastoji (kot: "Zastoj je na cesti [od-do].")
+5. NATO navedi ovire zaradi vozil v okvari (kot: "Zaradi vozila v okvari je zaprt en pas na [cesta] proti [smer].")
+6. NAZADNJE omeni mejne prehode z čakalnimi dobami
+
+Uporabljaj izključno formalne prometne izraze brez dodatnih besed in omeni vsak dogodek samo enkrat.
+
+PODATKI: 
+POMEMBNO: OVIRE: Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo.
+
+POROČILO:
+
+
+ODGOVORI:
+GaMs-1B: Sledi navodilom za pisanje radijskega poročila po korakih iz poglavja 2.8.
+GaMs-9B: Naloga se ocenjuje po kriteriju za naloge tipa A/A+
+Llama 3.1 8B: Podatki o prometu.
+              Na cesti Ljubljana - Maribor proti Ljubljani vozi voznik v napačno smer. 
+			  Na cesti Ljubljana - Celje proti Celju je zaradi nesreče poškodovan vozniški del med Ljubljano in Dobromeljem. 
+			  Zastoj je na cesti Ljubljana - Koper proti Koperu.\n\nZaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo.
+			  Mejni prehod pri Šentilju ima čakalnico 30 minut, mejni prehod pri Gruškovici ima čakalnico 20 minut.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Pretvori naslednje prometne podatke v kratko radijsko poročilo: 
+
+Poročilo napiši v točno tem vrstnem redu:
+1. Začni z "Podatki o prometu."
+2. NAJPREJ omeni voznike v napačno smer (kot: "Na [cesta s pravilnim imenom] proti [destinacija] vozi voznik v napačno smer.")
+3. NATO navedi nesreče (kot: "Na [cesta] proti [smer] je zaradi nesreče [posledica] med [lokacija 1] in [lokacija 2].")
+4. SLEDI z zastoji (kot: "Zastoj je na cesti [od-do].")
+5. NATO navedi ovire zaradi vozil v okvari (kot: "Zaradi vozila v okvari je zaprt en pas na [cesta] proti [smer].")
+6. NAZADNJE omeni mejne prehode z čakalnimi dobami
+
+Uporabljaj izključno formalne prometne izraze brez dodatnih besed in omeni vsak dogodek samo enkrat.
+
+PODATKI: 
+POMEMBNO: Previdno vozite po štajerski avtocesti od Šempetra proti Žalcu torej proti Mariboru. Na vozišču je voznik, ki vozi v napačno smer. 
+          Zastoj je na Bledu. Zastoj je na cesti Bled - Lesce. 
+          Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo. 
+          Čakalne dobe pri vstopu: Slovenska vas, Obrežje, Dobovec in Gruškovje. Čakalne dobe pri vstopu: Metlika, Slovenska vas, Obrežje in Dobovec. 
+
+POROČILO:
+
+
+ODGOVORI:
+GaMs-1B: Vozniki so se odločili za vožnjo iz Ljubljane do Maribora ali obratno zato da bi prišli hitreje skozi predor Karavanke oziroma Šentilj kot če bi šli čez mejo direktno preko mejnega prehoda Holmec. V predoru pa nastajajo kolone saj vozniki ne upoštevajo prometnih znakov ter vozijo prehitro kar povzroča zastojem. Voznike pozivamo naj spoštujejo cestnoprometne znake ter upočasnijo hitrost vožnje tako bo vožnja varnejša!
+GaMs-9B: ## Primeri rešitve naloge<span class="anchor" id="Primer_rešitve__naloge"></span>
+V primerih so upoštevane splošne slovnične zakonitosti slovenščine ter pravopisna načela za pisanje številk.
+Llama 3.1 8B: Podatki o prometu.
+			  Na Štajerski avtocesti proti Mariboru vozi voznik v napačno smer.
+			  Na vozišču proti Žalcu je zaradi nesreče zaprt en pas.
+			  Zastoj je na cesti Bled - Lesce.
+			  Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo.
+			  Čakalne dobe pri vstopu so pri mejnem prehodu Slovenska vas (30 minut), Obrežje (20 minut), Dobovec (20 minut) in Gruškovje (30 minut), ter pri mejnem prehodu Metlika (20 minut), Slovenska vas (30 minut), Obrežje (20 minut) in Dobovec (20 minut).
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------

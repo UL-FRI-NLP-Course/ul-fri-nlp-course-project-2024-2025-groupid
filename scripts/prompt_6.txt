@@ -1,0 +1,163 @@
+Natančno pretvori prometne podatke v uradna prometna poročila po naslednjih pravilih:
+
+1. Ne dodajaj informacij, ki niso navedene v podatkih
+2. Uporabi uradna imena cest 
+   - LJUBLJANA-KOPER: primorska avtocesta proti Kopru ali Ljubljani
+   - LJUBLJANA-KARAVANKE: gorenjska avtocesta proti Karavankam/Avstriji ali Ljubljani
+   - LJUBLJANA-MARIBOR: štajerska avtocesta proti Mariboru ali Ljubljani
+   - MARIBOR-GRUŠKOVJE: podravska avtocesta proti Lendavi/Madžarski ali Mariboru
+   - Gorenjska avtocesta proti Kranju = gorenjska avtocesta proti Avstriji/Karavankam
+   - Dolenjska avtocesta proti Novemu mestu = dolenjska avtocesta proti Hrvaški/Obrežju
+   - Hitra cesta skozi Maribor = regionalna cesta Betnava-Pesnica / nekdanja hitra cesta skozi Maribor
+   - Hitra cesta razcep Nanos-Vrtojba = vipavska hitra cesta v smeri proti Italiji/Vrtojbi
+3. Za vsak dogodek uporabi eno od formul:
+   - Cesta in smer + razlog + posledica in odsek
+   - Razlog + cesta in smer + posledica in odsek
+
+4. Počasni pas je pas za počasna vozila.
+
+Polovična zapora ceste pomeni: promet je tam urejen izmenično enosmerno. 
+
+Vsi pokriti vkopi itd. so predori, razen galerija Moste ostane galerija Moste.
+
+Ko se kaj dogaja na razcepih, je treba navesti od kod in kam: Na razcepu Kozarje je zaradi nesreče oviran promet iz smeri Viča proti Brezovici, …
+
+Pri obvozu: Obvoz je po vzporedni regionalni cesti/po cesti Lukovica-Blagovica ali vozniki se lahko preusmerijo na vzporedno regionalno cesto 
+
+PRIMER 1:
+PODATKI: Nesreča na avtocesti A1 med Celjem in Slovenskimi Konjicami. Zastoji v obe smeri.
+POROČILO: Na avtocesti A1 med Celjem in Slovenskimi Konjicami je zaradi prometne nesreče prišlo do zastojev v obe smeri.
+
+PRIMER 2:
+PODATKI: Zgoščen promet na ljubljanski obvoznici v smeri Šiške.
+POROČILO: Na ljubljanski obvoznici je promet močno zgoščen v smeri Šiške.
+
+ZDAJ PRETVORI SLEDEČE PODATKE V POROČILO:
+PODATKI: POMEMBNO: Previdno vozite po štajerski avtocesti od Šempetra proti Žalcu torej proti Mariboru. Na vozišču je voznik, ki vozi v napačno smer. 
+ZASTOJI: Zastoj je na Bledu. Zastoj je na cesti Bled - Lesce. 
+OVIRE: Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo. 
+Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Ljubljana, proti krožišču Tomačevo. 
+MEJNI PREHODI: Čakalne dobe pri vstopu: Slovenska vas, Obrežje, Dobovec in Gruškovje. Čakalne dobe pri vstopu: Metlika, Slovenska vas, Obrežje in Dobovec. 
+POROČILO:
+
+ODGOVORI:
+GaMs-1B: NA AVTOCESTI JE ZASTAL PROMET IZ CESTE CELJE – ŠENTJUR PROTI SLOVENSKI BISTRICI IN NA LJUBLJANIŠKI AC PRED ŠIŠKO. VOZITE HITRO!!
+GaMs-9B: Prometnotehnološka komisija (PTTK), ustanovljena leta 2008 kot delovno telo Društva za ceste Slovenije s ciljem spodbuditi aktivnosti strokovnih organizacij k skupnemu iskanju rešitve problemov upravljanja prometa ter njihovega vključevanja tako v zakonodajo kakor tudi v projektive tehničnih elementov državnega avtocestnega omrežja, si bo skupaj z drugimi institucijami še naprej prizadevala doseči čim večjo stopnjo usklajenost posameznikov oz. predstavnikov različnih inštitutov glede problematičnih tematik povezanih s prometom.
+Llama 3.1 8B: Na štajerski avtocesti proti Mariboru je zaradi vozila v okvari zaprt en pas na cesti Črnuče - Tomačevo proti krožišču Tomačevo in na cesti Črnuče - Ljubljana proti krožišču Tomačevo. 
+              Promet je urejen izmenično enosmerno zaradi polovične zapore ceste na cesti Črnuče - Tomačevo proti krožišču Tomačevo in na cesti Črnuče - Ljubljana proti krožišču Tomačevo. 
+			  V območju štajerske avtoceste proti Mariboru je zaradi vozila v okvari oviran promet iz smeri Ljubljane proti Mariboru. \n\nPromet je močno zgoščen na ljubljanski obvoznici v smeri Šiške. 
+			  Ob vozišču je voznik, ki vozi v napačno smer na štajerski avtocesti od Šempetra proti Žalcu.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+Natančno pretvori prometne podatke v uradna prometna poročila po naslednjih pravilih:
+
+1. Ne dodajaj informacij, ki niso navedene v podatkih
+2. Uporabi uradna imena cest 
+   - LJUBLJANA-KOPER: primorska avtocesta proti Kopru ali Ljubljani
+   - LJUBLJANA-KARAVANKE: gorenjska avtocesta proti Karavankam/Avstriji ali Ljubljani
+   - LJUBLJANA-MARIBOR: štajerska avtocesta proti Mariboru ali Ljubljani
+   - MARIBOR-GRUŠKOVJE: podravska avtocesta proti Lendavi/Madžarski ali Mariboru
+   - Gorenjska avtocesta proti Kranju = gorenjska avtocesta proti Avstriji/Karavankam
+   - Dolenjska avtocesta proti Novemu mestu = dolenjska avtocesta proti Hrvaški/Obrežju
+   - Hitra cesta skozi Maribor = regionalna cesta Betnava-Pesnica / nekdanja hitra cesta skozi Maribor
+   - Hitra cesta razcep Nanos-Vrtojba = vipavska hitra cesta v smeri proti Italiji/Vrtojbi
+3. Za vsak dogodek uporabi eno od formul:
+   - Cesta in smer + razlog + posledica in odsek
+   - Razlog + cesta in smer + posledica in odsek
+
+4. Počasni pas je pas za počasna vozila.
+
+Polovična zapora ceste pomeni: promet je tam urejen izmenično enosmerno. 
+
+Vsi pokriti vkopi itd. so predori, razen galerija Moste ostane galerija Moste.
+
+Ko se kaj dogaja na razcepih, je treba navesti od kod in kam: Na razcepu Kozarje je zaradi nesreče oviran promet iz smeri Viča proti Brezovici, …
+
+Pri obvozu: Obvoz je po vzporedni regionalni cesti/po cesti Lukovica-Blagovica ali vozniki se lahko preusmerijo na vzporedno regionalno cesto 
+
+PRIMER 1:
+PODATKI: Nesreča na avtocesti A1 med Celjem in Slovenskimi Konjicami. Zastoji v obe smeri.
+POROČILO: Na avtocesti A1 med Celjem in Slovenskimi Konjicami je zaradi prometne nesreče prišlo do zastojev v obe smeri.
+
+PRIMER 2:
+PODATKI: Zgoščen promet na ljubljanski obvoznici v smeri Šiške.
+POROČILO: Na ljubljanski obvoznici je promet močno zgoščen v smeri Šiške.
+
+ZDAJ PRETVORI SLEDEČE PODATKE V POROČILO:
+PODATKI: OVIRE: Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo.
+POROČILO:
+
+ODGOVORI:
+GaMs-1B: 5. Če ni drugače navedeno, velja pravilo o omejitvi hitrosti (glej zgoraj).
+6. Pri izvozu z avtoceste ne sme biti nobenega zastoja več kot 30 minut!!
+GaMs-9B: PROMETNE NESREČE IN OVIRA NA CESTI: Prometna nesreča na glavni cesti Ljubljana – Medvode (pri križišču s Podutiško). Zaprta sta dva vozna pasova, nastal pa bo zastoj prometa.. Vozilo v okvari še vedno stoji tudi čez celo noč na AC Postojna – Koper, kar povzroca daljse kolone.... Prihaja namrec kolesar..... KOLESARJI! :D
+Llama 3.1 8B: Na cesti Črnuče - Tomačevo je zaradi vozila v okvari oviran en pas proti krožišču Tomačevo.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+Natančno pretvori prometne podatke v uradna prometna poročila po naslednjih pravilih:
+
+1. Ne dodajaj informacij, ki niso navedene v podatkih
+2. Uporabi uradna imena cest 
+   - LJUBLJANA-KOPER: primorska avtocesta proti Kopru ali Ljubljani
+   - LJUBLJANA-KARAVANKE: gorenjska avtocesta proti Karavankam/Avstriji ali Ljubljani
+   - LJUBLJANA-MARIBOR: štajerska avtocesta proti Mariboru ali Ljubljani
+   - MARIBOR-GRUŠKOVJE: podravska avtocesta proti Lendavi/Madžarski ali Mariboru
+   - Gorenjska avtocesta proti Kranju = gorenjska avtocesta proti Avstriji/Karavankam
+   - Dolenjska avtocesta proti Novemu mestu = dolenjska avtocesta proti Hrvaški/Obrežju
+   - Hitra cesta skozi Maribor = regionalna cesta Betnava-Pesnica / nekdanja hitra cesta skozi Maribor
+   - Hitra cesta razcep Nanos-Vrtojba = vipavska hitra cesta v smeri proti Italiji/Vrtojbi
+3. Za vsak dogodek uporabi eno od formul:
+   - Cesta in smer + razlog + posledica in odsek
+   - Razlog + cesta in smer + posledica in odsek
+
+4. Počasni pas je pas za počasna vozila.
+
+Polovična zapora ceste pomeni: promet je tam urejen izmenično enosmerno. 
+
+Vsi pokriti vkopi itd. so predori, razen galerija Moste ostane galerija Moste.
+
+Ko se kaj dogaja na razcepih, je treba navesti od kod in kam: Na razcepu Kozarje je zaradi nesreče oviran promet iz smeri Viča proti Brezovici, …
+
+Pri obvozu: Obvoz je po vzporedni regionalni cesti/po cesti Lukovica-Blagovica ali vozniki se lahko preusmerijo na vzporedno regionalno cesto 
+
+PRIMER 1:
+PODATKI: Nesreča na avtocesti A1 med Celjem in Slovenskimi Konjicami. Zastoji v obe smeri.
+POROČILO: Na avtocesti A1 med Celjem in Slovenskimi Konjicami je zaradi prometne nesreče prišlo do zastojev v obe smeri.
+
+PRIMER 2:
+PODATKI: Zgoščen promet na ljubljanski obvoznici v smeri Šiške.
+POROČILO: Na ljubljanski obvoznici je promet močno zgoščen v smeri Šiške.
+
+ZDAJ PRETVORI SLEDEČE PODATKE V POROČILO:
+PODATKI: Previdno vozite po štajerski avtocesti od Šempetra proti Žalcu torej proti Mariboru. Na vozišču je voznik, ki vozi v napačno smer. 
+         Zastoj je na Bledu. Zastoj je na cesti Bled - Lesce. 
+         Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo. 
+         Čakalne dobe pri vstopu: Slovenska vas, Obrežje, Dobovec in Gruškovje. Čakalne dobe pri vstopu: Metlika, Slovenska vas, Obrežje in Dobovec.
+POROČILO:
+
+ODGOVORI:
+GaMs-1B: Na cestah s polovično zaporo (predor Karavanke) ni več gneče!!
+GaMs-9B: 50% popust veljajo samo prvi trije (ali pet) kuponi!
+Llama 3.1 8B: Na štajerski avtocesti od Šempetra proti Žalcu, torej proti Mariboru, je voznik, ki vozi v napačno smer, zaradi česar je zaprt en pas proti krožišču Tomačevo. 
+              Na cesti Bled - Lesce je zastoj. \n\nZaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo.
+			  Čas čakanja pri vstopu je v naslednjih odsekih: 
+			  - Slovenska vas: 15 minut
+			  - Obrežje: 20 minut
+			  - Dobovec: 25 minut
+			  - Gruškovje: 30 minut
+			  Čas čakanja pri vstopu je tudi v naslednjih odsekih: 
+			  - Metlika: 15 minut
+			  - Slovenska vas: 20 minut
+			  - Obrežje: 25 minut
+			  - Dobovec: 30 minut.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------

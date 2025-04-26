@@ -1,0 +1,94 @@
+Generiraj kratko in jedrnato prometno poročilo za radijskega voditelja na podlagi podatkov. 
+
+Poročilo mora strogo slediti tem pravilom:
+1. Začni z "Podatki o prometu."
+2. Dogodki morajo biti navedeni v natančnem vrstnem redu po pomembnosti: voznik v napačno smer → nesreče → zastoji → ovire → mejni prehodi.
+3. Uporablj pravilno terminologijo za ceste in smeri po navodilih (npr. "štajerska avtocesta proti Mariboru").
+4. Vsak dogodek navedi v največ enem stavku po vzorcu: [cesta in smer] + [razlog] + [posledica in odsek].
+5. Ne uporabljaj dodatnih razlag ali nepotrebnih besed kot so "pozor", "voznike" itd.
+6. Skupna dolžina največ 6 stavkov.
+
+PODATKI: POMEMBNO: Previdno vozite po štajerski avtocesti od Šempetra proti Žalcu torej proti Mariboru. Na vozišču je voznik, ki vozi v napačno smer. 
+ZASTOJI: Zastoj je na Bledu. Zastoj je na cesti Bled - Lesce. 
+OVIRE: Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo. 
+Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Ljubljana, proti krožišču Tomačevo. 
+MEJNI PREHODI: Čakalne dobe pri vstopu: Slovenska vas, Obrežje, Dobovec in Gruškovje. Čakalne dobe pri vstopu: Metlika, Slovenska vas, Obrežje in Dobovec. 
+            
+POROČILO: 
+
+ODGOVORI:
+GaMs-1B: Zaključi s kratkim povzetkom dogodka ter opisom poti do cilja oziroma kraja kjer si se nahajal/a med dogodkom!
+GaMs-9B: Vozniki pozor! Vozilo se pelje v nasprotno smer iz Ljubljane proti Celju ozri se okoli sebe ter bodi pozoren preden zavijate levo s križišča Dunajske ceste ob Trzinu saj tam stojita dva policijska kombi-ja zaradi česar ti lahko uide kakšen kolesar če ga nisi pričakoval tako da pazi ker imajo policisti pravico kaznovati tebe namesto tistega drugega pa tudi sicer si želiš srečno pot domov kaj?
+Llama 3.1 8B: Podatki o prometu.
+              Štajerska avtocesta proti Mariboru: voznik v napačno smer, zaradi česar je bila prekinita prometna signalizacija. 
+			  Zastoj je na Bledu.
+			  Zastoj je na cesti Bled - Lesce.
+			  Cesta Črnuče - Tomačevo, proti krožišču Tomačevo: zaradi vozila v okvari je zaprt en pas. 
+			  Mejni prehod Slovenska vas: čakalna doba pri vstopu.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Generiraj kratko in jedrnato prometno poročilo za radijskega voditelja na podlagi podatkov. 
+
+Poročilo mora strogo slediti tem pravilom:
+1. Začni z "Podatki o prometu."
+2. Dogodki morajo biti navedeni v natančnem vrstnem redu po pomembnosti: voznik v napačno smer → nesreče → zastoji → ovire → mejni prehodi.
+3. Uporablj pravilno terminologijo za ceste in smeri po navodilih (npr. "štajerska avtocesta proti Mariboru").
+4. Vsak dogodek navedi v največ enem stavku po vzorcu: [cesta in smer] + [razlog] + [posledica in odsek].
+5. Ne uporabljaj dodatnih razlag ali nepotrebnih besed kot so "pozor", "voznike" itd.
+6. Skupna dolžina največ 6 stavkov.
+
+PODATKI: OVIRE: Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo. 
+            
+POROČILO: 
+
+ODGOVORI:
+GaMs-1B: Voznik se pelje skozi predor Šentvid iz Ljubljane do Kranja ter nato nadaljuje pot preko Jesenic nazaj domov. Na poti ga ovirajo kolone vozil pred predorom Karavanke zaradi prometne konice. V predoru sta dva prometna pasova zaprta zato promet poteka izmenično enosmerno s čakalno dobo 30 minut pri vstopu/izstopu. Promet čez Ljubelj občasno tudi zapirajo.
+Ovire nastajajo predvsem ob prometnih konicah med 8. uro zjutraj in 16.30, saj vozniki osebnih avtomobilov čakajo več ur preden lahko nadaljujejo vožnjo naprej oziroma jo sploh začnejo.
+GaMs-9B: ZASTOJI : Na štajerski avtocesti med cestninsko postajo Kompolje in predorom Podmilj nastaja daljši zastoj zaradi delne zapore voznega pasu; kolona pa sega tudi že čez priključek Blagovica proti Trojanam ter iz Ljubljane mimo Šmartinske ceste skozi naselje Zadobrova naprej vse tja do Žal in še dlje nazaj ob južni ljubljanski obvoznici skorajda prav tako daleč!
+Llama 3.1 8B: Podatki o prometu:
+			  Štajerska avtocesta proti Mariboru: Zaradi vozila v okvari je zaprt en pas, od sezone Tomačevo. 
+			  Nova Gorica - Ljubljana: Vozač v napačno smer je ustavil na odseku Trbovlje - Zidani Most. 
+			  Ljubljana - Koper: V bližini odseka Postojna - Ratežar je potekala avtobusna nesreča brez poškodb. 
+			  Celje - Ljubljana: Zastoj je na odseku Grosuplje - Ljubljana zaradi kolesa, ki leži na cesti. 
+			  Ljubljana - Maribor: Ovire so na odseku Šmartno ob Paki - Zidani Most zaradi vozila v okvari. 
+			  Mejni prehod: Na mejni prehodu Šentilj - Maribor so bile dolžine čakalnih vrst do 1,5 km.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Generiraj kratko in jedrnato prometno poročilo za radijskega voditelja na podlagi podatkov. 
+
+Poročilo mora strogo slediti tem pravilom:
+1. Začni z "Podatki o prometu."
+2. Dogodki morajo biti navedeni v natančnem vrstnem redu po pomembnosti: voznik v napačno smer → nesreče → zastoji → ovire → mejni prehodi.
+3. Uporablj pravilno terminologijo za ceste in smeri po navodilih (npr. "štajerska avtocesta proti Mariboru").
+4. Vsak dogodek navedi v največ enem stavku po vzorcu: [cesta in smer] + [razlog] + [posledica in odsek].
+5. Ne uporabljaj dodatnih razlag ali nepotrebnih besed kot so "pozor", "voznike" itd.
+6. Skupna dolžina največ 6 stavkov.
+
+PODATKI: Previdno vozite po štajerski avtocesti od Šempetra proti Žalcu torej proti Mariboru. Na vozišču je voznik, ki vozi v napačno smer. 
+         Zastoj je na Bledu. Zastoj je na cesti Bled - Lesce. 
+         Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo. 
+         Čakalne dobe pri vstopu: Slovenska vas, Obrežje, Dobovec in Gruškovje. Čakalne dobe pri vstopu: Metlika, Slovenska vas, Obrežje in Dobovec. 
+            
+POROČILO: 
+
+ODGOVORI:
+GaMs-1B: Na odseku štajerske avtoceste med Slovenskimi Konjicami in Slovensko Bistrico-Zahod se zaradi prometne nesreče odvija promet izmenično enosmerno s čakanjem pred predorom Pletovarje približno 2 km. V nesreči sta bila udeležena dva osebna avtomobila. Promet poteka tekoče.
+GaMs-9B: Previdno se peljite skozi tunel Golovec iz Ljubljane proti Domžalam zaradi padca drevesa ob desni strani cestišča med predorom Mali vrh in cestninsko postajo Kompolje. Promet poteka samo po počasnem pasu zato nastaja zastoj približno kilometer dolgo kolono pa lahko pričakujete tudi naprej mimo CP Pesnica vse tja nekako do Lenarta saj tam ravno tako popravljajo cesto ter postavili semaforizirano gradbišče s čakanjem nekaj minut kar bo verjetno povzročilo še kakšne večjih zamašk tukaj bi rad poudaril da prosim upoštevajte varnostne ukrepe ko greste pešec prečkajte ulico vedno zunaj označenih površin nikakor ne smete tekati če ste otroci ker vam grozi kazen sto eurov
+Llama 3.1 8B: Podatki o prometu:
+		      Štajerska avtocesta proti Mariboru: Voznik vozi v napačno smer. 
+			  Štajerska avtocesta od Šempetra proti Žalcu: Zastoj na Bledu. 
+			  Štajerska avtocesta od Šempetra proti Žalcu: Zastoj na cesti Bled - Lesce. 
+			  Cesta Črnuče - Tomačevo proti krožišču Tomačevo: Zaprt en pas zaradi vozila v okvari. 
+			  Cesta Slovenska vas: Čakalna doba pri vstopu je [določena doba]. 
+			  Cesta Obrežje: Čakalna doba pri vstopu je [določena doba]. 
+			  Cesta Dobovec: Čakalna doba pri vstopu je [določena doba]. 
+			  Cesta Gruškovje: Čakalna doba pri vstopu je [določena doba]. 
+			  Cesta Metlika: Čakalna doba pri vstopu je [določ doba].
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------

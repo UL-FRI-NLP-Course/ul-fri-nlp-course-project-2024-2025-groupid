@@ -1,0 +1,196 @@
+Ustvari prometno poročilo iz podanih podatkov.
+
+Strogo upoštevaj ta pravila:
+
+1. FORMULACIJA POROČILA:
+   - Uporabi eno od dveh formul: "Cesta in smer + razlog + posledica in odsek" ALI "Razlog + cesta in smer + posledica in odsek"
+   - Primer: "Na štajerski avtocesti proti Mariboru je zaradi nesreče oviran promet med priključkom Celje-vzhod in počivališčem Zima."
+
+2. PRAVILNA IMENA AVTOCEST IN SMERI:
+   - LJUBLJANA-KOPER: primorska avtocesta proti Kopru ali Ljubljani
+   - LJUBLJANA-KARAVANKE: gorenjska avtocesta proti Karavankam/Avstriji ali Ljubljani
+   - LJUBLJANA-MARIBOR: štajerska avtocesta proti Mariboru ali Ljubljani
+   - MARIBOR-GRUŠKOVJE: podravska avtocesta proti Lendavi/Madžarski ali Mariboru
+   - Gorenjska avtocesta proti Kranju = gorenjska avtocesta proti Avstriji/Karavankam
+   - Dolenjska avtocesta proti Novemu mestu = dolenjska avtocesta proti Hrvaški/Obrežju
+   - Hitra cesta skozi Maribor = regionalna cesta Betnava-Pesnica / nekdanja hitra cesta skozi Maribor
+   - Hitra cesta razcep Nanos-Vrtojba = vipavska hitra cesta v smeri proti Italiji/Vrtojbi
+
+3. LJUBLJANSKA OBVOZNICA:
+   - Vzhodna: razcep Malence (proti Novemu mestu), razcep Zadobrova (proti Mariboru)
+   - Zahodna: razcep Koseze (proti Kranju), razcep Kozarje (proti Kopru)
+   - Severna: razcep Koseze (proti Kranju), razcep Zadobrova (proti Mariboru)
+   - Južna: razcep Kozarje (proti Kopru), razcep Malence (proti Novemu mestu)
+
+4. TERMINOLOŠKE ZAHTEVE:
+   - Počasni pas → pas za počasna vozila
+   - Polovična zapora ceste → promet je urejen izmenično enosmerno
+   - Zaprta polovica avtoceste → promet je urejen le po polovici avtoceste v obe smeri
+   - Pokriti vkopi → predori (razen galerija Moste)
+
+Poročilo začni z "Podatki o prometu." in strogo sledi hierarhiji dogodkov. Posamezne dogodke navedi v jedrnatih stavkih, brez dodatnih razlag ali komentarjev. Vključi vse pomembne podatke, a brez ponavljanja. Maksimalna dolžina poročila je 120 besed.
+
+PRIMER PRAVILNEGA POROČILA:
+Za podatke:
+- Voznik v napačno smer na gorenjski avtocesti od Kranja proti Ljubljani
+- Zastoj na primorski avtocesti od Unca proti Logatcu
+- Vozilo v okvari na južni ljubljanski obvoznici proti Novemu mestu
+- Mejni prehod Obrežje: čakalna doba pri vstopu
+
+Pravilno poročilo bi bilo:
+"Podatki o prometu.
+Zaradi vozila v okvari je zaprt en pas na južni ljubljanski obvoznici med razcepi Kozarje in Malence proti Novemu mestu.
+Pri vstopu na mejnem prehodu Obrežje je čakalna doba."
+
+PODATKI: POMEMBNO: Previdno vozite po štajerski avtocesti od Šempetra proti Žalcu torej proti Mariboru. Na vozišču je voznik, ki vozi v napačno smer. 
+ZASTOJI: Zastoj je na Bledu. Zastoj je na cesti Bled - Lesce. 
+OVIRE: Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo. 
+Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Ljubljana, proti krožišču Tomačevo. 
+MEJNI PREHODI: Čakalne dobe pri vstopu: Slovenska vas, Obrežje, Dobovec in Gruškovje. Čakalne dobe pri vstopu: Metlika, Slovenska vas, Obrežje in Dobovec. 
+
+POROČILO
+
+
+ODGOVORI:
+GaMs-1B: 5. IZRAČUN POVPREČNIH ČASOV VOŽNJE ZA POSAMEZNI PROMETNI ZNAK NA CESTI
+V tem primeru gre samo za izračun povprečnega časa vožnje posameznega prometnega znaka glede na celotno pot potovanja enega voznika do naslednjega križišča oziroma drugega prometnega znaka. Izračun se opravi tako da se seštejejo časi vseh prometnih znakov pred križišči oz drugimi prometnimi znaki ter odštevajo čase ostalih vozil preden pridejo do določenega križišča oziroma drugega prometnega znaka. Pri izračunu upoštevamo tudi čas čakanja voznikov ob zastojih. V kolikor pride vozilo s prednostjo pa lahko izračunamo še povprečni čas prihoda prvega vozila na križišče oziroma drug znak. Če imamo več kot dva prometna znaka moramo izračunati povprečje časov prihodov obeh vrst vozil skupaj.
+6. UPORABA PODATKOVNIH BAZ PRI OBLIKOVANJU SPLETNE STRANI
+Spletna stran mora biti pregledna in enostavna za uporabo. Zato morajo podatki vsebovati naslednje elemente: naslov spletne strani; opisne informacije o spletni strani vključno z imenom domene spletnega naslova, opisom vsebine spletnih vsebin itd., ime datoteke podatkovne baze, kjer so shranjeni vsi podatki potrebni za delovanje aplikacije; datum izdelave zadnje spremembe podatkovnih baz, če obstajajo; povezava na spletno mesto izdelovalca podatkovne baze; povezave na druge vire informacij povezanih z aplikacijo; seznam uporabljenih programskih jezikov; imena datotek uporabljene programske opreme; navodila kako dostopati do posameznih delov podatkovne baze preko spleta ipd.. Podatkovne baze naj bodo dostopne vsem uporabnikom interneta ne zgolj razvijalcem aplikacij ampak predvsem končnim uporabnikom teh programov. Prav zato priporočamo izdelavo lastne podatkovne baze saj bo to omogočilo lažje vzdrževanje sistema
+GaMs-9B: Obvestilo prometa se lahko objavlja samo s pomočjo uradnega programa ObjavaPromet!. Program si naložite tukaj >>, ga namestite ter uporabljajte skladno z Navodili za uporabo > >
+Llama 3.1 8B: Podatki o prometu.
+              Zaradi vozila v napačno smer na štajerski avtocesti od Šempetra proti Žalcu je oviran promet.
+			  Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo.
+			  Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Ljubljana, proti krožišču Tomačevo.
+			  Zastoj je na cesti Bled - Lesce.
+			  Čakalne dobe pri vstopu so pri mejnih prehodih Slovenska vas, Obrežje, Dobovec in Gruškovje ter Metlika, Slovenska vas, Obrežje in Dobovec.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+Ustvari prometno poročilo iz podanih podatkov.
+
+Strogo upoštevaj ta pravila:
+
+1. FORMULACIJA POROČILA:
+   - Uporabi eno od dveh formul: "Cesta in smer + razlog + posledica in odsek" ALI "Razlog + cesta in smer + posledica in odsek"
+   - Primer: "Na štajerski avtocesti proti Mariboru je zaradi nesreče oviran promet med priključkom Celje-vzhod in počivališčem Zima."
+
+2. PRAVILNA IMENA AVTOCEST IN SMERI:
+   - LJUBLJANA-KOPER: primorska avtocesta proti Kopru ali Ljubljani
+   - LJUBLJANA-KARAVANKE: gorenjska avtocesta proti Karavankam/Avstriji ali Ljubljani
+   - LJUBLJANA-MARIBOR: štajerska avtocesta proti Mariboru ali Ljubljani
+   - MARIBOR-GRUŠKOVJE: podravska avtocesta proti Lendavi/Madžarski ali Mariboru
+   - Gorenjska avtocesta proti Kranju = gorenjska avtocesta proti Avstriji/Karavankam
+   - Dolenjska avtocesta proti Novemu mestu = dolenjska avtocesta proti Hrvaški/Obrežju
+   - Hitra cesta skozi Maribor = regionalna cesta Betnava-Pesnica / nekdanja hitra cesta skozi Maribor
+   - Hitra cesta razcep Nanos-Vrtojba = vipavska hitra cesta v smeri proti Italiji/Vrtojbi
+
+3. LJUBLJANSKA OBVOZNICA:
+   - Vzhodna: razcep Malence (proti Novemu mestu), razcep Zadobrova (proti Mariboru)
+   - Zahodna: razcep Koseze (proti Kranju), razcep Kozarje (proti Kopru)
+   - Severna: razcep Koseze (proti Kranju), razcep Zadobrova (proti Mariboru)
+   - Južna: razcep Kozarje (proti Kopru), razcep Malence (proti Novemu mestu)
+
+4. TERMINOLOŠKE ZAHTEVE:
+   - Počasni pas → pas za počasna vozila
+   - Polovična zapora ceste → promet je urejen izmenično enosmerno
+   - Zaprta polovica avtoceste → promet je urejen le po polovici avtoceste v obe smeri
+   - Pokriti vkopi → predori (razen galerija Moste)
+
+Poročilo začni z "Podatki o prometu." in strogo sledi hierarhiji dogodkov. Posamezne dogodke navedi v jedrnatih stavkih, brez dodatnih razlag ali komentarjev. Vključi vse pomembne podatke, a brez ponavljanja.
+
+PRIMER PRAVILNEGA POROČILA:
+Za podatke:
+- Voznik v napačno smer na gorenjski avtocesti od Kranja proti Ljubljani
+- Zastoj na primorski avtocesti od Unca proti Logatcu
+- Vozilo v okvari na južni ljubljanski obvoznici proti Novemu mestu
+- Mejni prehod Obrežje: čakalna doba pri vstopu
+
+Pravilno poročilo bi bilo:
+"Podatki o prometu.
+Zaradi vozila v okvari je zaprt en pas na južni ljubljanski obvoznici med razcepi Kozarje in Malence proti Novemu mestu.
+Pri vstopu na mejnem prehodu Obrežje je čakalna doba."
+
+PODATKI:  OVIRE: Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo.  
+
+POROČILO
+
+
+ODGOVORI:
+GaMs-1B: 5. IZRAČUN POVPREČNE HITROSTI VOZILA V OKVARI NA CESTAH ZARADI ODPRTIH PREDOROV: Na podlagi hitrosti vozil pred zaporo se izračuna povprečna hitrost vožnje ob zapori predora. Ta podatek lahko uporabiš tudi kot informacijo glede varnosti predorske cevi. Če so podatki pomanjkljivi, jih dopolni s podatkom o dolžini zapore oziroma času trajanja zastoja ter številom avtomobilov, ki vozijo vzporedno s cevjo.
+6. UPORABA PODATKOVNIH MODELOV: Uporaba podatkovnih modelov omogoča hitrejše računanje prometnih obremenitev cest. Pri tem upošteva različne dejavnike prometa, npr.: število udeležencev v cestnem prometu; gostoto prometnega toka itd.. Podatkovni modeli omogočajo izračun različnih vrst zastojev oz. prometne obremenitve posameznih odsekov cestnega omrežja ipd...
+GaMs-9B: ZASTOJ NA CESTI CELJE – ŠEMPETER PRI GORICI OD RAZCEPOV ARJA VAS PROTI PRIMORSKI DO IZSTOPA VIŠNJA GORA TER CESTA IVANČNA GORICA — BRŠLJIN NADVIŠKA POT POTOVALCI OVIRANI VOZILOM JE BILO ONEMOGOĆENO PREHITEVANJE ZA PODATEK SE POGLEDA TUKAJ https://www.dars.si/podatki_o_cestninah
+Llama 3.1 8B: 'Podatki o prometu.
+               Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo proti krožišču Tomačevo.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+Ustvari prometno poročilo iz podanih podatkov.
+
+Strogo upoštevaj ta pravila:
+
+1. FORMULACIJA POROČILA:
+   - Uporabi eno od dveh formul: "Cesta in smer + razlog + posledica in odsek" ALI "Razlog + cesta in smer + posledica in odsek"
+   - Primer: "Na štajerski avtocesti proti Mariboru je zaradi nesreče oviran promet med priključkom Celje-vzhod in počivališčem Zima."
+
+2. PRAVILNA IMENA AVTOCEST IN SMERI:
+   - LJUBLJANA-KOPER: primorska avtocesta proti Kopru ali Ljubljani
+   - LJUBLJANA-KARAVANKE: gorenjska avtocesta proti Karavankam/Avstriji ali Ljubljani
+   - LJUBLJANA-MARIBOR: štajerska avtocesta proti Mariboru ali Ljubljani
+   - MARIBOR-GRUŠKOVJE: podravska avtocesta proti Lendavi/Madžarski ali Mariboru
+   - Gorenjska avtocesta proti Kranju = gorenjska avtocesta proti Avstriji/Karavankam
+   - Dolenjska avtocesta proti Novemu mestu = dolenjska avtocesta proti Hrvaški/Obrežju
+   - Hitra cesta skozi Maribor = regionalna cesta Betnava-Pesnica / nekdanja hitra cesta skozi Maribor
+   - Hitra cesta razcep Nanos-Vrtojba = vipavska hitra cesta v smeri proti Italiji/Vrtojbi
+
+3. LJUBLJANSKA OBVOZNICA:
+   - Vzhodna: razcep Malence (proti Novemu mestu), razcep Zadobrova (proti Mariboru)
+   - Zahodna: razcep Koseze (proti Kranju), razcep Kozarje (proti Kopru)
+   - Severna: razcep Koseze (proti Kranju), razcep Zadobrova (proti Mariboru)
+   - Južna: razcep Kozarje (proti Kopru), razcep Malence (proti Novemu mestu)
+
+4. TERMINOLOŠKE ZAHTEVE:
+   - Počasni pas → pas za počasna vozila
+   - Polovična zapora ceste → promet je urejen izmenično enosmerno
+   - Zaprta polovica avtoceste → promet je urejen le po polovici avtoceste v obe smeri
+   - Pokriti vkopi → predori (razen galerija Moste)
+
+Poročilo začni z "Podatki o prometu." in strogo sledi hierarhiji dogodkov. Posamezne dogodke navedi v jedrnatih stavkih, brez dodatnih razlag ali komentarjev. Vključi vse pomembne podatke, a brez ponavljanja. 
+
+PRIMER PRAVILNEGA POROČILA:
+Za podatke:
+- Voznik v napačno smer na gorenjski avtocesti od Kranja proti Ljubljani
+- Zastoj na primorski avtocesti od Unca proti Logatcu
+- Vozilo v okvari na južni ljubljanski obvoznici proti Novemu mestu
+- Mejni prehod Obrežje: čakalna doba pri vstopu
+
+Pravilno poročilo bi bilo:
+"Podatki o prometu.
+Zaradi vozila v okvari je zaprt en pas na južni ljubljanski obvoznici med razcepi Kozarje in Malence proti Novemu mestu.
+Pri vstopu na mejnem prehodu Obrežje je čakalna doba."
+
+PODATKI: Previdno vozite po štajerski avtocesti od Šempetra proti Žalcu torej proti Mariboru. Na vozišču je voznik, ki vozi v napačno smer. 
+         Zastoj je na Bledu. Zastoj je na cesti Bled - Lesce. 
+         Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo. 
+         Čakalne dobe pri vstopu: Slovenska vas, Obrežje, Dobovec in Gruškovje. Čakalne dobe pri vstopu: Metlika, Slovenska vas, Obrežje in Dobovec. 
+
+POROČILO
+
+
+ODGOVORI:
+GaMs-1B: Voznik vozil v napačni strani vozišča se nahaja pred mejnim prehodom Šentilj. Vozila stojijo že več ur! V poročilu ne navajaj nobenih podrobnosti glede dogodka razen tega da so zastoji nastali ob zastoju na avstrijski meji ter da vozniki čakajo tudi do dve uri. Poročilo zaključi s podatki o dolžini zastoja oziroma čakanja voznikov na mejnih prehodih. Dolžina kolone naj bo vsaj 10 kilometrov saj bodo tako informacije bolj točne. Če kolona ni daljša kot 5 km lahko uporabiš naslednjo formulacijo:"Vzhodnoevropsko omrežje cest".
+Če pa si želiš še natančnejše rezultate potem vključi naslednje formule:1. Cestna hitrost 2. Hitrost vožnje 3. Čas potovanja 4. Število prevoženih kilometrov 5. Vrsta prevožene poti 6. Način prevoza 7. Smer gibanja 8. Količina porabljenega goriva 9. Poraba bencina 10. Teža voznika 11. Starost voznika 12. Velikost avtomobila 13. Motor 14. Gorivo 15. Stanje pnevmatik 16. Temperatura motorja 17. Menjava olja 18. Varnostni pasovi 19. Masa tovora 20. Prostornino rezervoarja 21. Kapaciteto prtljažnika 22. Tip vlečne naprave 23. Širina prikolice 24. Višina prikolice 25. Nosilnost 26. Odmik osi 27. Kolesa 28. Dimenzije koles 29. Naklon cestišča 30. Razdalja med osmi 31. Skupna teža 32. Težina priklopnika 33. Največja dovoljena masa 34. Dovoljena skupna obremenitev 35. Najmanjša razdalja 36. Največje število potnikov 37. Najdaljši čas zadrževanja 38. Najvišja nadmorska višina 39. Najnižji zračni tlak 40. Temperaturna razlika 41. Vlaga 42. Zračno onesnaženje 43. Osvetljenost 44. Vidljivost 45. Vreme 46. Prometne razmere 47. Varnost 48. Preglednost 49. Označenost 50. Razporeditev
+GaMs-9B: Vsebuje največjo možno količino informacij glede prometa!
+Llama 3.1 8B: Podatki o prometu.
+              Zaradi vozila v napačno smer na štajerski avtocesti od Šempetra proti Žalcu (torej proti Mariboru).
+			  Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo.
+			  Zastoj je na Bledu, na cesti Bled - Lesce.\nČakalne dobe pri vstopu so pri mejnem prehodu Slovenska vas, pri mejnem prehodu Obrežje, pri mejnem prehodu Dobovec in pri mejnem prehodu Gruškovje.
+			  Čakalne dobe pri vstopu so pri mejnem prehodu Metlika, pri mejnem prehodu Slovenska vas, pri mejnem prehodu Obrežje in pri mejnem prehodu Dobovec.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------

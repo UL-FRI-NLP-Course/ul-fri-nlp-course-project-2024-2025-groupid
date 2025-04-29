@@ -32,10 +32,10 @@ Poročilo začni z "Podatki o prometu." in strogo sledi hierarhiji dogodkov. Pos
 
 PRIMER PRAVILNEGA POROČILA:
 Za podatke:
-- Voznik v napačno smer na gorenjski avtocesti od Kranja proti Ljubljani
-- Zastoj na primorski avtocesti od Unca proti Logatcu
-- Vozilo v okvari na južni ljubljanski obvoznici proti Novemu mestu
-- Mejni prehod Obrežje: čakalna doba pri vstopu
+- Na štajerski avtocesti proti Mariboru je zaradi nesreče oviran promet med priključkom Celje-vzhod in počivališčem Zima.
+- Zaradi burje je na vipavski hitri cesti proti Vrtojbi prepovedan promet za hladilnike in vsa vozila s ponjavami.
+- Zaradi vozila v okvari na južni ljubljanski obvoznici med priključkoma Koseze in Tomačevo nastaja zatoj.
+- Na mejnih prehodih Obrežje in Slovenska vas je čakalna doba eno uro.
 
 Pravilno poročilo bi bilo:
 "Podatki o prometu.
@@ -48,21 +48,22 @@ OVIRE: Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, pro
 Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Ljubljana, proti krožišču Tomačevo. 
 MEJNI PREHODI: Čakalne dobe pri vstopu: Slovenska vas, Obrežje, Dobovec in Gruškovje. Čakalne dobe pri vstopu: Metlika, Slovenska vas, Obrežje in Dobovec. 
 
-POROČILO
+POROČILO:
 
 
 ODGOVORI:
-GaMs-1B: 5. IZRAČUN POVPREČNIH ČASOV VOŽNJE ZA POSAMEZNI PROMETNI ZNAK NA CESTI
-V tem primeru gre samo za izračun povprečnega časa vožnje posameznega prometnega znaka glede na celotno pot potovanja enega voznika do naslednjega križišča oziroma drugega prometnega znaka. Izračun se opravi tako da se seštejejo časi vseh prometnih znakov pred križišči oz drugimi prometnimi znaki ter odštevajo čase ostalih vozil preden pridejo do določenega križišča oziroma drugega prometnega znaka. Pri izračunu upoštevamo tudi čas čakanja voznikov ob zastojih. V kolikor pride vozilo s prednostjo pa lahko izračunamo še povprečni čas prihoda prvega vozila na križišče oziroma drug znak. Če imamo več kot dva prometna znaka moramo izračunati povprečje časov prihodov obeh vrst vozil skupaj.
-6. UPORABA PODATKOVNIH BAZ PRI OBLIKOVANJU SPLETNE STRANI
-Spletna stran mora biti pregledna in enostavna za uporabo. Zato morajo podatki vsebovati naslednje elemente: naslov spletne strani; opisne informacije o spletni strani vključno z imenom domene spletnega naslova, opisom vsebine spletnih vsebin itd., ime datoteke podatkovne baze, kjer so shranjeni vsi podatki potrebni za delovanje aplikacije; datum izdelave zadnje spremembe podatkovnih baz, če obstajajo; povezava na spletno mesto izdelovalca podatkovne baze; povezave na druge vire informacij povezanih z aplikacijo; seznam uporabljenih programskih jezikov; imena datotek uporabljene programske opreme; navodila kako dostopati do posameznih delov podatkovne baze preko spleta ipd.. Podatkovne baze naj bodo dostopne vsem uporabnikom interneta ne zgolj razvijalcem aplikacij ampak predvsem končnim uporabnikom teh programov. Prav zato priporočamo izdelavo lastne podatkovne baze saj bo to omogočilo lažje vzdrževanje sistema
-GaMs-9B: Obvestilo prometa se lahko objavlja samo s pomočjo uradnega programa ObjavaPromet!. Program si naložite tukaj >>, ga namestite ter uporabljajte skladno z Navodili za uporabo > >
+GaMs-1B: Vzhodno ljubljansko obvoznico so zaprli pred izvozom Bežigrad. Promet poteka dvosmerno samo preko priključka Brdo. V predoru Šentvid se izvaja sanacija vozišča. Obvoz je možen tudi čez Celovško cesto do predora Golovec ter naprej mimo Brda oziroma Šentvida nazaj na avtocesto A1 Šentilj – Koper.
+         Promet bo potekal nemoteno predvidoma še danes zvečer oz. jutri zjutraj.
+         Obvozi bodo urejeni tako kot običajno ob prometnih konicah.
+         Dodatne informacije dobite na telefonski številki 01 583
+GaMs-9B: Prometno stanje se spreminja zelo pogosto! Prosimo Vas da redno osvežite stran www.promet.si
 Llama 3.1 8B: Podatki o prometu.
-              Zaradi vozila v napačno smer na štajerski avtocesti od Šempetra proti Žalcu je oviran promet.
-			  Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo.
-			  Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Ljubljana, proti krožišču Tomačevo.
-			  Zastoj je na cesti Bled - Lesce.
-			  Čakalne dobe pri vstopu so pri mejnih prehodih Slovenska vas, Obrežje, Dobovec in Gruškovje ter Metlika, Slovenska vas, Obrežje in Dobovec.
+              Zaradi voznika, ki vozi v napačno smer, je oviran promet na štajerski avtocesti proti Mariboru od Šempetra proti Žalcu.
+              Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo proti krožišču Tomačevo.
+              Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Ljubljana proti krožišču Tomačevo.
+              Na cesti Bled - Lesce je nastala zastoja.
+              Čakalne dobe pri vstopu na mejnih prehodih so: Slovenska vas, Obrežje, Dobovec in Gruškovje ter Metlika, Slovenska vas, Obrežje in Dobovec.
+mt0-large: PODATKI: - Na štajerski avtocesti proti Mariboru je zaradi nesreče oviran promet med priključkom Celje-vzhod in počivališčem Zima. - Na vipavski hitri ceste proti Vrtojbi je prepovedan promet za hladilnike in vsa vozila s ponjavami. - Na mejnih prehodih Obrežje in Slovenska vas je čakalna doba eno uro.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -104,10 +105,10 @@ Poročilo začni z "Podatki o prometu." in strogo sledi hierarhiji dogodkov. Pos
 
 PRIMER PRAVILNEGA POROČILA:
 Za podatke:
-- Voznik v napačno smer na gorenjski avtocesti od Kranja proti Ljubljani
-- Zastoj na primorski avtocesti od Unca proti Logatcu
-- Vozilo v okvari na južni ljubljanski obvoznici proti Novemu mestu
-- Mejni prehod Obrežje: čakalna doba pri vstopu
+- Na štajerski avtocesti proti Mariboru je zaradi nesreče oviran promet med priključkom Celje-vzhod in počivališčem Zima.
+- Zaradi burje je na vipavski hitri cesti proti Vrtojbi prepovedan promet za hladilnike in vsa vozila s ponjavami.
+- Zaradi vozila v okvari na južni ljubljanski obvoznici med priključkoma Koseze in Tomačevo nastaja zatoj.
+- Na mejnih prehodih Obrežje in Slovenska vas je čakalna doba eno uro.
 
 Pravilno poročilo bi bilo:
 "Podatki o prometu.
@@ -116,15 +117,20 @@ Pri vstopu na mejnem prehodu Obrežje je čakalna doba."
 
 PODATKI:  OVIRE: Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo.  
 
-POROČILO
+POROČILO:
 
 
 ODGOVORI:
-GaMs-1B: 5. IZRAČUN POVPREČNE HITROSTI VOZILA V OKVARI NA CESTAH ZARADI ODPRTIH PREDOROV: Na podlagi hitrosti vozil pred zaporo se izračuna povprečna hitrost vožnje ob zapori predora. Ta podatek lahko uporabiš tudi kot informacijo glede varnosti predorske cevi. Če so podatki pomanjkljivi, jih dopolni s podatkom o dolžini zapore oziroma času trajanja zastoja ter številom avtomobilov, ki vozijo vzporedno s cevjo.
-6. UPORABA PODATKOVNIH MODELOV: Uporaba podatkovnih modelov omogoča hitrejše računanje prometnih obremenitev cest. Pri tem upošteva različne dejavnike prometa, npr.: število udeležencev v cestnem prometu; gostoto prometnega toka itd.. Podatkovni modeli omogočajo izračun različnih vrst zastojev oz. prometne obremenitve posameznih odsekov cestnega omrežja ipd...
-GaMs-9B: ZASTOJ NA CESTI CELJE – ŠEMPETER PRI GORICI OD RAZCEPOV ARJA VAS PROTI PRIMORSKI DO IZSTOPA VIŠNJA GORA TER CESTA IVANČNA GORICA — BRŠLJIN NADVIŠKA POT POTOVALCI OVIRANI VOZILOM JE BILO ONEMOGOĆENO PREHITEVANJE ZA PODATEK SE POGLEDA TUKAJ https://www.dars.si/podatki_o_cestninah
-Llama 3.1 8B: 'Podatki o prometu.
-               Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo proti krožišču Tomačevo.
+GaMs-1B: Vzrok: Vozilo se je prevrnilo čez ograjo ob vozišču pri izvozu Ljubljana zahod. Promet poteka samo po prehitevalnem pasu.
+         Obvoz: Vozniki naj uporabijo izvoz Ljubljana center ter avtocesto zapustijo takoj pred izvozom Bizovik oziroma nadaljujejo pot do izvoza Brod.
+         Promet bo potekal nemoteno naprej mimo priključka Brdo predvidoma dve uri.
+         Voznik lahko nadaljuje vožnjo tudi preko priključkov Šmartno in Vodice.
+         Dodatne informacije so voznikom dosegljive prek Prometno informacijskega centra Republike Slovenije www.promet.si.
+GaMs-9B: Prometno informacijski center sporoča naslednje informacije glede stanja prometa:
+         V notranjem cestnem prometu ni posebnosti.
+Llama 3.1 8B: Podatki o prometu.
+              Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo proti krožišču Tomačevo.
+mt0-large: PODATKI: OVIRE: Zaradi vozila v okvari je zaprt en pas na južni ljubljanski obvoznici med priključkoma Koseze in Tomačevo, proti Novemu mestu. - Zaradi burje je na vipavski hitri ceste proti Vrtojbi prepovedan promet za hladilnike in vsa vozila s ponjavami.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -166,10 +172,10 @@ Poročilo začni z "Podatki o prometu." in strogo sledi hierarhiji dogodkov. Pos
 
 PRIMER PRAVILNEGA POROČILA:
 Za podatke:
-- Voznik v napačno smer na gorenjski avtocesti od Kranja proti Ljubljani
-- Zastoj na primorski avtocesti od Unca proti Logatcu
-- Vozilo v okvari na južni ljubljanski obvoznici proti Novemu mestu
-- Mejni prehod Obrežje: čakalna doba pri vstopu
+- Na štajerski avtocesti proti Mariboru je zaradi nesreče oviran promet med priključkom Celje-vzhod in počivališčem Zima.
+- Zaradi burje je na vipavski hitri cesti proti Vrtojbi prepovedan promet za hladilnike in vsa vozila s ponjavami.
+- Zaradi vozila v okvari na južni ljubljanski obvoznici med priključkoma Koseze in Tomačevo nastaja zatoj.
+- Na mejnih prehodih Obrežje in Slovenska vas je čakalna doba eno uro.
 
 Pravilno poročilo bi bilo:
 "Podatki o prometu.
@@ -181,16 +187,18 @@ PODATKI: Previdno vozite po štajerski avtocesti od Šempetra proti Žalcu torej
          Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo. 
          Čakalne dobe pri vstopu: Slovenska vas, Obrežje, Dobovec in Gruškovje. Čakalne dobe pri vstopu: Metlika, Slovenska vas, Obrežje in Dobovec. 
 
-POROČILO
+POROČILO:
 
 
 ODGOVORI:
-GaMs-1B: Voznik vozil v napačni strani vozišča se nahaja pred mejnim prehodom Šentilj. Vozila stojijo že več ur! V poročilu ne navajaj nobenih podrobnosti glede dogodka razen tega da so zastoji nastali ob zastoju na avstrijski meji ter da vozniki čakajo tudi do dve uri. Poročilo zaključi s podatki o dolžini zastoja oziroma čakanja voznikov na mejnih prehodih. Dolžina kolone naj bo vsaj 10 kilometrov saj bodo tako informacije bolj točne. Če kolona ni daljša kot 5 km lahko uporabiš naslednjo formulacijo:"Vzhodnoevropsko omrežje cest".
-Če pa si želiš še natančnejše rezultate potem vključi naslednje formule:1. Cestna hitrost 2. Hitrost vožnje 3. Čas potovanja 4. Število prevoženih kilometrov 5. Vrsta prevožene poti 6. Način prevoza 7. Smer gibanja 8. Količina porabljenega goriva 9. Poraba bencina 10. Teža voznika 11. Starost voznika 12. Velikost avtomobila 13. Motor 14. Gorivo 15. Stanje pnevmatik 16. Temperatura motorja 17. Menjava olja 18. Varnostni pasovi 19. Masa tovora 20. Prostornino rezervoarja 21. Kapaciteto prtljažnika 22. Tip vlečne naprave 23. Širina prikolice 24. Višina prikolice 25. Nosilnost 26. Odmik osi 27. Kolesa 28. Dimenzije koles 29. Naklon cestišča 30. Razdalja med osmi 31. Skupna teža 32. Težina priklopnika 33. Največja dovoljena masa 34. Dovoljena skupna obremenitev 35. Najmanjša razdalja 36. Največje število potnikov 37. Najdaljši čas zadrževanja 38. Najvišja nadmorska višina 39. Najnižji zračni tlak 40. Temperaturna razlika 41. Vlaga 42. Zračno onesnaženje 43. Osvetljenost 44. Vidljivost 45. Vreme 46. Prometne razmere 47. Varnost 48. Preglednost 49. Označenost 50. Razporeditev
-GaMs-9B: Vsebuje največjo možno količino informacij glede prometa!
+GaMs-1B: Vozite previdno! Vozniki osebnih vozil so se začeli vračati domov ob koncu tedna. Promet poteka tekoče. V zastojih ni večjih težav. Pri izstopu bodite pozorni predvsem na voznike tovornih vozil ter avtobusov.
+         Vreme bo še naprej vplivalo tudi na vozne razmere. Predvsem bodo težave povzročali mokrih cestišča, megla pa lahko povzroči slabšo vidljivost. Zato priporočamo uporabo zimske opreme.
+GaMs-9B: Prometno stanje se ne spreminja bistveno glede na včerajšnje popoldansko obdobje. Prometa ni veliko več kot ga pričakujemo za takšno vreme oz. čas dneva. Ponekod so še vedno prisotne kratkotrajnejše kolone ter posledične daljše potovalne čase. Največ prometa beležimo na relacijah Ljubljana – Koper, kjer pa kljub temu niso zaznane kakšne posebne težave. Prav tako tudi ostale glavne cestne povezave potekajo tekoče. Tudi danes smo bili deležni nekaj manjših nezgod, vendar nobena ni povzročila hujših motenj v prometu.
 Llama 3.1 8B: Podatki o prometu.
-              Zaradi vozila v napačno smer na štajerski avtocesti od Šempetra proti Žalcu (torej proti Mariboru).
-			  Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo.
-			  Zastoj je na Bledu, na cesti Bled - Lesce.\nČakalne dobe pri vstopu so pri mejnem prehodu Slovenska vas, pri mejnem prehodu Obrežje, pri mejnem prehodu Dobovec in pri mejnem prehodu Gruškovje.
-			  Čakalne dobe pri vstopu so pri mejnem prehodu Metlika, pri mejnem prehodu Slovenska vas, pri mejnem prehodu Obrežje in pri mejnem prehodu Dobovec.
+              Zaradi voznika, ki vozi v napačno smer, je oviran promet na štajerski avtocesti od Šempetra proti Žalcu.\nZastoj je na cesti Bled - Lesce.
+              Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo proti krožišču Tomačevo.
+              Pri vstopu na mejnem prehodu Slovenska vas je čakalna doba eno uro.
+              Pri vstopu na mejnem prehodu Obrežje je čakalna doba eno uro.\nPri vstopu na mejnem prehodu Dobovec je čakalna doba eno uro.
+              Pri vstopu na mejnem prehodu Gruškovje je čakalna doba eno uro.\nPri vstopu na mejnem prehodu Metlika je čakalna doba eno uro.
+mt0-large: Podatki o prometu. Zaradi vozila v okvari je zaprt en pas na južni ljubljanski obvoznici med priključkoma Koseze in Tomačevo, proti Novemu mestu. Čakalne dobe pri vstopu: Metlika, Slovenska vas, Obrežje, Dobovec in Gruškovje.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------

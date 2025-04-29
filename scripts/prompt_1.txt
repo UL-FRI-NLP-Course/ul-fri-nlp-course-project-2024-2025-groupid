@@ -33,6 +33,7 @@ Llama 3.1 8B: Podatki o prometu.
 			  Zastoji so tudi na Bledu, na cesti Bled - Lesce. Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo, ter en pas na cesti Črnuče - Ljubljana, proti krožišču Tomačevo. 
 			  
 			  Pozor, voznike! Čakalne dobe pri vstopu so pri naslednjih mejnih prehodih: Slovenska vas, Obrežje, Dobovec in Gruškovje
+mt0-large: PODATKI: NESREČE: Na štajerski avtocesti proti Mariboru je oviran promet od priključka Celje vzhod proti počivališču Zima.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -80,6 +81,7 @@ Llama 3.1 8B: Podatki o prometu:
 			  Proti Kopru pred razcepom Gabrk je oviran promet. Na primorski avtocesti pred Kozino proti Ljubljani je zaprt vozni pas.
 			  
 			  Glavna cesta Maribor - Dravograd pri Spodnjem Slemenu je ponovno od
+mt0-large: PODATKI: NESREČE: Na gorenjski avtocesti za Šmartnim proti Ljubljana oviran vozni pas. Na primorski avtocesti pred Kozino proti Ljubljana oviran vozni pas. Na pomurski avtocesti med Senožečami in Nanosom proti Ljubljana oviran vozni pas. Na pomurski avtocesti med Senožečami in Nanosom proti Ljubljana oviran vozni pas.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -145,6 +147,7 @@ Llama 3.1 8B: Podatki o prometu:
 			  Na cesti Kamnik - Stahovica - Gornji Grad bo do 26. aprila zaprt odsek Črna pri Kamniku - Potok v Črni.
 			  
 			  Na mejnih prehodih Obrežje, Gruškovje in Petišovci je čakalna doba.
+mt0-large: PODATKI: NESREČE: Na štajerski avtocesti proti Mariboru je oviran promet od priključka Celje-vzhod proti počivališču Zima. PODATKI: ZASTOJI: Pred predorom Karavanke je zastoj tovornih vozil proti Avstriji, 1 kilometer.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -196,6 +199,7 @@ Llama 3.1 8B: Podatki o prometu:
 			  Danes ob 23. uri bo na dolenjski avtocesti med Brežicami in Obrežjem pol urna popolna zapora v obe smeri zaradi postavitve portala.
 			  
 			  Na primorski avtocesti bo do 24. junija zaradi gradnje obvoznice na Vrhniki
+mt0-large: PODATKI: NESREČE: Na štajerski avtocesti proti Mariboru je oviran promet od priključka Celje vzhod proti počivališču Zima. PODATKI: OVIRE: Na severni ljubljanski obvoznici je zaradi predmetov na vozišču oviran promet med rondojem Tomačevo in priključkom Bežigrad proti Kosezam.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -250,6 +254,7 @@ Llama 3.1 8B: Podatki o prometu.
 			  V Primorskem je zaradi megle vidljivost na cesti med Razdrtim in Senožečami zmanjšana.
 			  
 			  Na dolenjski avtocesti med priključkoma
+mt0-large: PODATKI: NESREČE: Na Štajerska avtocesta pred predorom Golo Rebro v smeri Ljubljana, prometna nesreča, zaprt vozni pas. Na pomurski avtocesti počivališče Lormanje sever - priključek Lenart v smeri Maribora, prometna nesreča, oviran promet. Na pomurski avtoceste počivališče Lormanje sever - priključek Lenart v smeri Maribora, prometna nesreča, oviran promet.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 

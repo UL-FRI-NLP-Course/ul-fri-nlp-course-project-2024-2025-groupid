@@ -47,6 +47,7 @@ Llama 3.1 8B: Na štajerski avtocesti proti Mariboru je zaradi vozila v okvari z
               Promet je urejen izmenično enosmerno zaradi polovične zapore ceste na cesti Črnuče - Tomačevo proti krožišču Tomačevo in na cesti Črnuče - Ljubljana proti krožišču Tomačevo. 
 			  V območju štajerske avtoceste proti Mariboru je zaradi vozila v okvari oviran promet iz smeri Ljubljane proti Mariboru. \n\nPromet je močno zgoščen na ljubljanski obvoznici v smeri Šiške. 
 			  Ob vozišču je voznik, ki vozi v napačno smer na štajerski avtocesti od Šempetra proti Žalcu.
+mt0-large: PODATKI: Nesreča na A1 med Celjem in Slovenskimi Konjicami. Zgoščen promet na ljubljanski obvoznici v smeri Šiške. MEJNI PREHODI: Čakalne dobe pri vstopu: Metlika, Slovenska vas, Obrežje, Dobovec in Gruškovje.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -97,6 +98,7 @@ GaMs-1B: 5. Če ni drugače navedeno, velja pravilo o omejitvi hitrosti (glej zg
 6. Pri izvozu z avtoceste ne sme biti nobenega zastoja več kot 30 minut!!
 GaMs-9B: PROMETNE NESREČE IN OVIRA NA CESTI: Prometna nesreča na glavni cesti Ljubljana – Medvode (pri križišču s Podutiško). Zaprta sta dva vozna pasova, nastal pa bo zastoj prometa.. Vozilo v okvari še vedno stoji tudi čez celo noč na AC Postojna – Koper, kar povzroca daljse kolone.... Prihaja namrec kolesar..... KOLESARJI! :D
 Llama 3.1 8B: Na cesti Črnuče - Tomačevo je zaradi vozila v okvari oviran en pas proti krožišču Tomačevo.
+mt0-large: PODATKI: OVIRE: Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -160,4 +162,5 @@ Llama 3.1 8B: Na štajerski avtocesti od Šempetra proti Žalcu, torej proti Mar
 			  - Slovenska vas: 20 minut
 			  - Obrežje: 25 minut
 			  - Dobovec: 30 minut.
+mt0-large: PODATKI: Nesreča na avtocesti A1 med Celjem in Slovenskimi Konjicami. Zastoji v obe smeri. Hitra cesta razcep Nanos-Vrtojba = regionalna cesta Betnava-Pesnica / nekdanja hitra cesta skozi Maribor. Čakalne dobe pri vstopu: Metlika, Slovenska vas, Obrežje, Dobovec in Gruškovje.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------

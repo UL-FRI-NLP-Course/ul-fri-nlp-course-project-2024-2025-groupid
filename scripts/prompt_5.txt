@@ -34,6 +34,7 @@ Llama 3.1 8B: Podatki o prometu.
 			  Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo proti krožišču Tomačevo.\n\nZaradi vozila v okvari je zaprt en pas na cesti Črnuče - Ljubljana proti krožišču Tomačevo.
 			  
 			  Čakalne dobe pri vstopu so pri mejnih prehodi: Slovenska vas, Obrežje, Dobovec in Gruškovje. \nČakalne dobe pri vstopu so pri mejnih prehodi: Metlika, Slovenska vas, Obrežje in Dobovec.
+mt0-large: PODATKI O  Prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI o prometu: PODATKI 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -67,6 +68,7 @@ Llama 3.1 8B: Podatki o prometu.
 			  Na cesti Ljubljana - Celje proti Celju je zaradi nesreče poškodovan vozniški del med Ljubljano in Dobromeljem. 
 			  Zastoj je na cesti Ljubljana - Koper proti Koperu.\n\nZaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo.
 			  Mejni prehod pri Šentilju ima čakalnico 30 minut, mejni prehod pri Gruškovici ima čakalnico 20 minut.
+mt0-large: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -104,4 +106,5 @@ Llama 3.1 8B: Podatki o prometu.
 			  Zastoj je na cesti Bled - Lesce.
 			  Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Tomačevo, proti krožišču Tomačevo.
 			  Čakalne dobe pri vstopu so pri mejnem prehodu Slovenska vas (30 minut), Obrežje (20 minut), Dobovec (20 minut) in Gruškovje (30 minut), ter pri mejnem prehodu Metlika (20 minut), Slovenska vas (30 minut), Obrežje (20 minut) in Dobovec (20 minut).
+mt0-large: Podrobnosti o prometu:
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------

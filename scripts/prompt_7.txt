@@ -24,6 +24,7 @@ Llama 3.1 8B: Na avtocesti proti Mariboru je zaradi vozila v okvari zaprt en pas
               Na cesti proti krožišču Tomačevo je zaradi vozila v okvari zaprt drugi pas med Črnuče in Ljubljano. 
               Na mejnem prehodu Celovec je čakalna doba. 
               Na mejnem prehodu Jesenice je čakalna doba.
+mt0-large: - Omits all non-data phrases ("be careful", "please note") - Use only the two allowed sentence structures: a) "Na [cesta] proti [smer] je zaradi [razlog] [posledica] med [lokasija1] in [lokasija2]." b) "Na mejnem prehodu [X] je čakalna doba.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -48,6 +49,7 @@ Report should be prepared by using one of these three options for data and/or re
 a) The
 GaMS-9B: "zaradi ovire se promet upočasnjuje".
 Llama 3.1 8B: Na cesti Črnuče - Tomačevo proti krožišču Tomačevo je zaradi vozila v okvari zaprt en pas med Črnucami in Tomačevom.
+mt0-large: - Omits all non-data phrases ("be careful", "please note") - Uses only the two allowed sentence structures: a) "Na [cesta] proti [smer] je zaradi [razlog] [posledica] med [lokasija1] in [lokasija2]." b) "Na mejnem prehodu [X] je čakalna doba.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -82,3 +84,4 @@ Llama 3.1 8B: Na vozišču proti Žalcu je voznik, ki vozi v napačno smer.
 			  Na cesti Bled - Lesce je zaradi nesreče zamud med Bledom in Lesce.
 			  Na cesti Črnuče - Tomačevo je zaradi vozila v okvari zamud v odseku Tomačevo.
 			  Zaradi prenosa materiala je na štajerski avtocesti proti Mariboru zamud med Šentjurjem in Cel
+mt0-large: - Do not repeat the information. - Be careful when driving. -

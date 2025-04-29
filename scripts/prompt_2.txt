@@ -25,6 +25,7 @@ Llama 3.1 8B: Podatki o prometu.
 			  Zastoj je na cesti Bled - Lesce.
 			  Cesta Črnuče - Tomačevo, proti krožišču Tomačevo: zaradi vozila v okvari je zaprt en pas. 
 			  Mejni prehod Slovenska vas: čakalna doba pri vstopu.
+mt0-large: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI: PODATKI:
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -55,6 +56,7 @@ Llama 3.1 8B: Podatki o prometu:
 			  Celje - Ljubljana: Zastoj je na odseku Grosuplje - Ljubljana zaradi kolesa, ki leži na cesti. 
 			  Ljubljana - Maribor: Ovire so na odseku Šmartno ob Paki - Zidani Most zaradi vozila v okvari. 
 			  Mejni prehod: Na mejni prehodu Šentilj - Maribor so bile dolžine čakalnih vrst do 1,5 km.
+mt0-large: PODATKI: OVIRE: Zaradi vozila v okvari je zaprt en pas na ceste Črnuče - Tomačevo, proti krožišču Tomačevo.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -91,4 +93,5 @@ Llama 3.1 8B: Podatki o prometu:
 			  Cesta Dobovec: Čakalna doba pri vstopu je [določena doba]. 
 			  Cesta Gruškovje: Čakalna doba pri vstopu je [določena doba]. 
 			  Cesta Metlika: Čakalna doba pri vstopu je [določ doba].
+mt0-large: PODATKI:
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------

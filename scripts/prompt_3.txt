@@ -31,6 +31,7 @@ Llama 3.1 8B: Podatki o prometu.
 			  Na cesti Bled - Lesce je nastal zastoj.
 			  Zaradi vozila v okvari je zaprt en pas na cesti Črnuče - Ljubljana, proti krožišču Tomačevo, zaradi česar je oviran promet.
 			  Na cesti Bled - Lesce je nastal zastoj.\n\nNa cesti Črnuče - Tomačevo je
+mt0-large: Podatki o prometu. Navedi dogodke po pomembnosti:
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -67,6 +68,7 @@ Llama 3.1 8B: Podatki o prometu.
 			  Na štajerski avtocesti proti Mariboru je zaradi nesreče oviran promet med priključkom Celje-vzhod in počivališčem Zima.
 			  Zaradi burje je na vipavski hitri cesti proti Vrtojbi prepovedan promet za hladilnike in vsa vozila s ponjavami.
 			  Na avtocesti proti Italiji je zaradi težav na mejnem prehodu Koper - Trst oviran promet.
+mt0-large: Podatki o prometu.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -108,4 +110,5 @@ Llama 3.1 8B: Podatki o prometu.
               Previdno vozite po štajerski avtocesti od Šempetra proti Žalcu torej proti Mariboru, ker je voznik na vozišču v napačno smer.
 			  Na cesti Bled - Lesce je zastoj.\n\nNa cesti Črnuče - Tomačevo proti krožišču Tomačevo je zaprt en pas zaradi vozila v okvari.
 			  Na vstopih v cestni odseki so čakalne dobe: Slovenska vas, Obrežje, Dobovec in Gruškovje ter Metlika, Slovenska vas, Obrežje in Dobovec.
+mt0-large: Podatki o prometu. [DOGODEK 1] [DOGODEK 2] [DOGODEK 3] [DOGODEK 4] [DOGODEK 6] [DOGODEK 7] [DOGODEK 8] [DOGODEK 9] [DOGODEK 9] [DOGODEK 9] [DOGODEK 9] [DOGODEK 9] [DOGODEK 9] [DOGODEK 9] [DOGODEK 9] [DOGODEK 9] [DOGODEK 9] [DOGODEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9] [DOGOTEK 9]
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------

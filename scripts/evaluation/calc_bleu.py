@@ -25,6 +25,7 @@ def find_matching_ground_truth(example_text, io_data):
     return: The matching ground truth output or None if not found
     """
     best_match = None
+    best_input = None
     best_ratio = 0
 
     for item in io_data:
@@ -32,37 +33,14 @@ def find_matching_ground_truth(example_text, io_data):
         ratio = SequenceMatcher(None, example_text, io_input).ratio()
         if ratio > best_ratio:
             best_ratio = ratio
+            best_input = item['input']
             best_match = item['output']
     
+    # print("BEST INPUT:\n", best_input, '\n')
     # print("example TEXT: ", example_text, '\n')
     # print("BEST MATCH: ", best_match)
 
     return best_match
-
-def calculate_bleu(model_outputs, references):
-    """
-    Calculate BLEU scores for model outputs against references
-    
-    model_outputs: List of model-generated texts
-    references: List of reference texts
-    
-    return: Dictionary with various BLEU scores
-    """
-    # Calculate sentence-level BLEU scores
-    sentence_scores = []
-    smooth_fn = SmoothingFunction().method1
-    for candidate, refs in zip(model_outputs, references):
-        score = sentence_bleu(refs, candidate, smoothing_function=smooth_fn)
-        sentence_scores.append(score)
-    
-    # Calculate corpus-level BLEU scores
-    corpus_score = corpus_bleu(references, model_outputs, smoothing_function=smooth_fn)
-    
-    return {
-        'sentence_scores': sentence_scores,
-        'average_sentence_score': sum(sentence_scores) / len(sentence_scores),
-        'corpus_score': corpus_score
-    }
 
 def evaluate_examples(examples_file, io_file):
     """
@@ -88,11 +66,32 @@ def evaluate_examples(examples_file, io_file):
             'all_references': [],
             'all_candidates': []
         }
+
+    file_name = examples_file.split("/")[-1].split(".")[0]
     
     # Process each example
     for example_idx, example_item in enumerate(examples_data, 1):
         example_text = example_item['prompt']
-        ground_truth = find_matching_ground_truth(example_text, io_data)
+
+        if int(file_name[-1]) == 1:
+            if example_idx == 0:
+                ground_truth = io_data[5]['output']
+            elif example_idx == 1:
+                ground_truth = io_data[0]['output']
+            elif example_idx == 2:
+                ground_truth = io_data[1]['output']
+            elif example_idx == 3:
+                ground_truth = io_data[2]['output']
+            elif example_idx == 4:
+                ground_truth = io_data[3]['output']
+            elif example_idx == 5:
+                ground_truth = io_data[4]['output']
+        elif example_idx == 0 or example_idx == 2:
+            ground_truth = io_data[5]['output']
+        elif example_idx == 1:
+            ground_truth = io_data[6]['output']
+        elif example_idx == 3:
+            ground_truth = io_data[7]['output']
         
         if not ground_truth:
             print(f"Warning: No matching ground truth found for example {example_idx}")
@@ -103,15 +102,17 @@ def evaluate_examples(examples_file, io_file):
             'ground_truth': ground_truth,
             'model_scores': {}
         }
+
+        smooth_fn = SmoothingFunction().method2
         
         # Evaluate each model's response
         for model_name, model_output in example_item['odgovori'].items():
             # Tokenize
-            reference = [word_tokenize(ground_truth.lower())]
-            candidate = word_tokenize(model_output.lower())
+            reference = [word_tokenize(ground_truth.lower(), language="slovene")]
+            candidate = word_tokenize(model_output.lower(), language="slovene")
             
             # Calculate BLEU
-            score = sentence_bleu(reference, candidate)
+            score = sentence_bleu(reference, candidate, weights=(0.25, 0.25, 0.25, 0.25), smoothing_function=smooth_fn)
             
             # Store results
             example_result['model_scores'][model_name] = score
@@ -121,13 +122,13 @@ def evaluate_examples(examples_file, io_file):
         
         results['examples'].append(example_result)
     
-    # Calculate corpus-level scores for each model
+    # Calculate scores for each model
     for model_name, model_data in results['models'].items():
         if model_data['all_references'] and model_data['all_candidates']:
-            model_data['corpus_bleu'] = corpus_bleu(
+            """model_data['corpus_bleu'] = corpus_bleu(
                 model_data['all_references'],
                 model_data['all_candidates']
-            )
+            )"""
             model_data['average_bleu'] = sum(model_data['all_scores']) / len(model_data['all_scores'])
     
     return results
@@ -139,24 +140,24 @@ def print_results(results):
     print("BLEU Score Evaluation Results")
     print("============================")
     
-    # Print corpus-level results for each model
+    # Print summary results for each model
     print("\nModel Performance Summary:")
-    print("{:<15} {:<15} {:<15}".format("Model", "Avg BLEU", "Corpus BLEU"))
-    print("-" * 45)
+    print("{:<15} {:<15}".format("Model", "Avg BLEU"))
+    print("-" * 25)
     for model_name, model_data in results['models'].items():
         avg = model_data.get('average_bleu', 0)
-        corpus = model_data.get('corpus_bleu', 0)
-        print("{:<15} {:<15.4f} {:<15.4f}".format(model_name, avg, corpus))
+        # corpus = model_data.get('corpus_bleu', 0)
+        print("{:<15} {:<15.4f}".format(model_name, avg))
     
-    # Print detailed example-level results
-    print("\nDetailed example Results:")
+    # Print detailed results
+    """print("\nDetailed example Results:")
     for example in results['examples']:
         print(f"\nexample {example['example_id']}:")
         print("Ground Truth:", example['ground_truth'][:100] + "...")
         print("{:<15} {:<10}".format("Model", "BLEU"))
         print("-" * 25)
         for model_name, score in example['model_scores'].items():
-            print("{:<15} {:<10.4f}".format(model_name, score))
+            print("{:<15} {:<10.4f}".format(model_name, score))"""
 
 if __name__ == "__main__":
     """

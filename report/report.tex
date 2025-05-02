@@ -22,6 +22,7 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \usepackage{lipsum,booktabs}
+\usepackage{float}
 
 \graphicspath{{fig/}}
 
@@ -149,7 +150,83 @@ Additionally, we will explore step-by-step prompting, where the task is explicit
 
 The dataset for fine-tuning our selected model is provided by RTV Slovenija and consists of structured traffic data paired with human-written reports. It includes a table with approximately 50 thousand entries, each describing real-time traffic incidents through 27 attributes such as affected roads, incident type, severity, and timestamps. Additionally, it contains around 28 thousand manually composed textual reports, which summarize traffic conditions in a concise and informative manner for radio broadcasting.
 
+\section*{Implementation}
 
+\subsection*{Data Preprocessing}
+Our first step was to thoroughly examine the provided data and preprocess it to make it suitable for prompt engineering and potential fine-tuning. We found the raw data to be somewhat inconsistent and difficult to work with, which required significant cleaning and restructuring.
+
+To standardize the input format, we removed the embedded markup language and created a unified .jsonl file. In this format, each entry groups all traffic events occurring between two reports. For example, events from 00:01 to 00:30 are assigned to the 00:30 report, while events after 00:30 are linked to the next one (e.g., 01:00).
+
+In addition, we restructured the information by category, rather than relying solely on the A1 and B1 columns. This approach enables more structured inputs and could later allow us to identify which events were cancelled or are no longer valid. In doing so, we have laid the groundwork for generating even more structured representations—such as JSON objects or knowledge graphs that capture the overall state of Slovenian traffic.
+
+\subsection*{Observing Base Models}
+
+To determine the most suitable model for further steps, including fine-tuning, we performed prompt engineering on four models: GaMS-1B, GaMS-9B, Llama 3.1 8B, and mt0-large. We began our exploration with a series of basic prompts to evaluate the models' general performance in simple, unrestricted scenarios. For instance, we used questions such as "Kakšno je vreme danes?" and "Kakšno je stanje v prometu?" to gauge their ability to provide relevant and coherent answers. While all models produced responses related to the questions, the information was fabricated, indicating a need to introduce structured input data.
+
+In response, we provided the models with specific data to guide their answers. For example, we supplied weather information such as "Povprečna temperatura v Sloveniji: 20 stopinj. Ljubljana: sončno, 22 stopinj." and traffic data such as "Na primorski avtocesti proti Ljubljani prometna nesreča. Nastaja zastoj." This adjustment highlighted substantial differences in the models' behaviors and their ability to process and apply the given data.
+
+GaMS-1B provided responses that were lengthy and verbose, often including additional irrelevant details unrelated to the input data, but are related to the topic. GaMS-9B displayed similar tendencies, generating extensive but largely irrelevant responses and occasionally introducing fictional information. Llama 3.1 8B demonstrated a partial ability to utilize the provided data but frequently produced overly generic or nonsensical outputs, revealing a lack of precision. Also Llama model frequently generated sentences that were grammatically incorrect in Slovenian. mt0-large, while concise, struggled with coherence and repeated phrases, as seen in its output for traffic data prompts. It sometimes struggled with Slovenian language.
+
+We incorporated weather-related questions into our tests to observe how the models performed in other domains. This helped us evaluate their versatility and robustness in handling different types of queries.
+
+Building on this initial evaluation, we proceeded with refining the prompt design and testing more sophisticated prompts. These new prompts included additional details and constraints specifically tailored for report generation. This iterative process allowed us to systematically enhance the models' ability to generate structured, accurate, and contextually appropriate outputs.
+
+\subsection*{Prompt Engineering}
+
+After extensive testing and iterative refinements, we identified seven distinct prompts that provided the most promising results for generating structured, concise, and accurate traffic reports in Slovenian to use them in evaluation. Each prompt adhered to specific formatting and content requirements. Prompt 1 introduced a basic structure by providing an example groundtruth report along with the necessary data, focusing on producing concise summaries without redundancy. Prompt 2 emphasized a strict order of importance (wrong-way driving, accidents, traffic jams, road obstacles, and border crossings), with precise terminology for roads and directions, a six-sentence limit, specific sentence formulations, and prohibited words. Prompt 3 provided a model structure and examples of correct reports, ensuring events were sequenced by priority and avoiding repetition. Prompt 4 reinforced similar rules while adding detailed guidelines on road terminologies and standard expressions, requiring adherence to official naming conventions for Slovenian roads. This prompt offered the most comprehensive instructions and examples. Prompt 5 prioritized exact sequencing and formal descriptions of incidents using predefined sentence structures without providing examples. Prompt 6 focused on specific language rules, clarifying terms like "slow lanes" and "covered tunnels" to ensure professional phrasing and accurate geographical references, supported by two examples of data and correct reports. Lastly, Prompt 7, written in English but requiring Slovenian reports, mandated the use of only two predefined sentence structures, eliminating non-essential phrasing and repetitive details while maintaining clarity.
+
+The evaluation process involved testing these seven prompts with three data formulations. First, the complete dataset for a single report was used, obtained from the preprocessing step. Second, reports were generated based on one piece of information at a time. Finally, clean data without repeated information or additional tags about the event (e.g., "OVIRE," "ZASTOJI," "MEJNI PREHODI," "POMEMBNO") was tested. This comprehensive approach ensured a thorough assessment of each prompt's effectiveness.
+
+\section*{Evaluation}
+
+\subsection*{Empirical evaluation}
+
+To better understand how language models handle the generation of traffic reports under varying data quality and formatting constraints, we evaluated the four models (GaMS-1B, GaMS-9B, Llama 3.1 8B, and mt0-large) on seven distinct above-described prompts.
+
+The models showed clear differences in performance when generating traffic reports. Llama 3.1 8B performed best overall, producing well-structured and informative outputs with the fewest grammatical errors, though it occasionally introduced unnecessary information or repeated content. GaMS-1B and GaMS-9B both struggled with relevance and information fidelity. GaMS-1B often produced overly brief reports missing key details, while GaMS-9B tended toward verbose and off-topic outputs, sometimes inventing events and showing coherence issues. mt0-large performed poorly, frequently generating irrelevant, repetitive, or nonsensical content regardless of prompt design. Only Llama responded reliably to prompts with structured formatting and demonstrated some consistency in following language and structure requirements. Across all models, prompt specificity was crucial - especially for GaMS models, which required very detailed instructions to achieve partial compliance.
+
+The evaluation across various prompt types revealed consistent performance patterns among the models. Llama 3.1 8B performed best in structured prompts with strict formatting requirements (Prompts 2, 4, 6, 7), generally adjusting to the defined hierarchies and traffic terminology. However, it occasionally missed important elements or relevant details when overly constrained by formatting requirements. In contrast, the GaMS models struggled across the board — particularly in open-ended prompts (Prompts 1, 3, 5), producing verbose, often irrelevant outputs, frequently ignoring instructions and making events up, or including unrelated information. On the other hand, GaMS-9B produced more fluid and natural-sounding text, which could be beneficial in open-ended prompts. mt0-large consistently fails to meet even basic task requirements, either by copying prompt instructions or generating incoherent and unusable text. The findings emphasize that structured prompting improves output reliability, but also highlight the need for targeted fine-tuning to address omissions, made-up information, and grammatical correctness. These limitations are especially critical for real-world deployment, where clarity and precision are essential.
+
+\subsection*{Evaluation using metrics}
+
+We employed the BLEU (Bilingual Evaluation Understudy) metric to quantitatively evaluate the quality of generated traffic reports. BLEU measures the similarity between model-generated text and human reference translations by comparing their n-gram patterns. Our implementation assessed matches from 1-grams (individual words) to 4-grams (four-word phrases), with equal weighting for each n-gram level. The metric aligns with traffic reporting needs, where both keyword accuracy (e.g., location names) and multi-word expressions (e.g., "zaprt vozni pas") are critical.
+
+\begin{table}[h!]
+\centering
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1}
+\caption{BLEU scores for different models using Prompt 7.}
+\begin{tabular}{cc}
+\toprule
+Model & BLEU \\
+\midrule
+GaMS-1B & 0.050 \\
+GaMS-9B & 0.061 \\
+Llama-3.1-8B & 0.205\\
+mt0-large & 0.041 \\
+\bottomrule
+\end{tabular}
+\label{tab:table2}
+\end{table}
+
+The BLEU scores (Table~\ref{tab:table2}) support our empirical findings, with Llama 3.1 8B clearly outperforming the other models. Its score of 0.205 reflects stronger compliance with prompt instructions and better structure compared to other models. GaMS-9B slightly outperforms GaMS-1B, though both remain low overall. Notably, GaMS-9B reached its peak performance of 0.11 on Prompt 2, which involved more structured guidance. This suggests that GaMS-9B may show some potential under stricter prompting or with targeted fine-tuning. mt0-large scores the lowest, reinforcing its observed failure to generate coherent or relevant content. These results suggest Llama 3.1 8B or GaMS-9B hold the most promise for generating traffic reports but requires fine-tuning, while the other models show limited suitability for this task in their current forms.
+
+\section*{Future Work}
+
+\subsection*{Challenges}
+
+A significant challenge with generating traffic reports using LLMs stems from inconsistencies in the provided data from RTV Slovenia. In the Excel data sheets, some critical information is occasionally missing. For example, there are cases where the data indicates waiting times at border crossings ("na mejnem prehodu je čakalna doba") without specifying the duration of the wait. In other instances, entire events are missing from the dataset altogether. Conversely, some events recorded in the Excel table for a given time window are not mentioned in the corresponding traffic report.
+
+Another issue arises from reports including events that occurred in previous time frames but should now be canceled in the current report. To address these challenges, further data preprocessing steps will be necessary to align events with their appropriate time frames and ensure that all relevant information is accurately reflected in reports. This includes handling incomplete data, reconciling discrepancies between the dataset and the reports, and ensuring that events from previous time frames are appropriately updated or removed.
+
+
+\subsection*{Structured Data Integration}
+
+To address data inconsistencies, we propose integrating structured inputs such as JSON schemas or knowledge graphs to represent traffic events in a consistent format. These structures allow for clear definition of event attributes (e.g., location, duration, type) and relationships, making it easier to manage event states—such as identifying and marking cancelled or outdated entries.
+
+\subsection*{Fine-Tuning}
+
+Our results show that while prompt engineering played a significant role in shaping the performance of the models, next steps like fine-tuning are crucial to improve the results. Llama 3.1 8B and GaMS-9B, while the strongest performers overall, still exhibited omissions and inconsistencies in details that could be addressed through fine-tuning on high-quality and structured traffic data. Another idea could involve fine-tuning the model with a mixture of structured and semi-structured prompts to better simulate real-world scenarios where reporting needs can vary in complexity. Prompts that offer some flexibility in structure could generate more complete and contextually accurate traffic reports. In conclusion, focusing on fine-tuning Llama 3.1 8B or GaMS-9B while refining prompt engineering seems to be the best approach to enhance its performance.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST

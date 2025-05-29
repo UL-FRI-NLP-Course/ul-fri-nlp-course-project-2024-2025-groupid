@@ -1,0 +1,81 @@
+[
+    {
+        "nujno": [
+            {
+                "lokacija": "(string) Lokacija nujne novice (npr. avtocesta)",
+                "dogodek": "(string) Dogodek, ki je sprožil izredno prometno informacijo (npr. vožnja v napačno smer)",
+                "več": "(string) Več informacij o dogodku",
+                "priporočilo": "(string) Priporočilo za voznike, glede dogodka (npr. držite se skrajno desno)"
+            }
+        ],
+        "izredno": [
+            {
+                "lokacija": "(string) Lokacija izredne novice (npr. avtocesta)",
+                "dogodek": "(string) Dogodek, ki je sprožil izredno prometno informacijo (npr. vožnja v napačno smer)",
+                "več": "(string) Več informacij o dogodku",
+                "priporočilo": "(string) Priporočilo za voznike, glede dogodka (npr. držite se skrajno desno)"
+            }
+        ],
+        "nesreče": [
+            {
+                "lokacija": "(string) Lokacija nesreče (npr. avtocesta, predor, križišče)",
+                "vzrok": "(string) Vzrok nesreče (npr. trčenje, okvara vozila, nepravilna vožnja)",
+                "posledica": "(string) Posledica nesreče (npr. zastoj v prometu, zapora ceste)"
+            }
+        ],
+        "zastoji": [
+            {
+                "lokacija": "(string) Lokacija zastoja (npr. pred predorom, most, križišče)",
+                "dolžina_zastoja_km": "(float) Dolžina zastoja v kilometrih",
+                "priporočilo": "(string) Priporočilo za voznike (npr. obvoz, uporaba drugega pasu)",
+                "čakalni_čas_min": "(integer) Predviden čas čakanja v minutah"
+            }
+        ],
+        "vremensko_stanje": [
+            {
+                "lokacija": "(string) Lokacija vremenskega stanja (npr. Ljubljana, Gorenjska)",
+                "vreme": "(string) Opis trenutnega vremena (npr. megla, dež, sneg)",
+                "temperatura": "(float) Temperatura na lokaciji (npr. 5.5°C)",
+                "priporočilo": "(string) Priporočilo glede vremenskih pogojev (npr. vozite previdno, zimske gume)"
+            }
+        ],
+        "ovire": [
+            {
+                "lokacija": "(string) Lokacija ovire na cesti (npr. predor, križišče, območje gradbišča)",
+                "vzrok": "(string) Vzrok ovire (npr. goreče vozilo, podrto drevo, predmet na cesti)",
+                "priporočilo": "(string) Priporočilo za voznike (npr. vozite po počasnem pasu, uporabite obvoz)",
+                "odprava": "(string) Ocenjeni čas odstranitve ovire (npr. do 18:00)"
+            }
+        ],
+        "dela_na_cesti": [
+            {
+                "lokacija": "(string) Lokacija del (npr. severna ljubljanska obvoznica, avtocesta A1)",
+                "vzrok": "(string) Vzrok del (npr. obnova ceste, čiščenje snega)",
+                "posledica": "(string) Posledica del (npr. zmanjšanje števila pasov, začasna zapora)",
+                "priporočilo": "(string) Priporočilo za voznike (npr. bodite potrpežljivi, pričakujte daljši čas potovanja)"
+            }
+        ],
+        "mejni_prehodi": [
+            {
+                "prehod": "(string) Ime mejnega prehoda (npr. Gruškovje, Jelšane)",
+                "čakalna_doba": {
+                    "osebna_vozila": {
+                        "status": "(string) Status prehoda za osebna vozila (npr. odprto, zaprt, preusmerjeno)",
+                        "vstop_ure": "(float) Čas za vstop v državo za osebna vozila v urah",
+                        "izstop_ure": "(float) Čas za izstop v državo za osebna vozila v urah"
+                    },
+                    "tovorna_vozila": {
+                        "status": "(string) Status prehoda za tovorna vozila (npr. odprto, zaprt, preusmerjeno)",
+                        "vstop_ure": "(float) Čas za vstop v državo za tovorna vozila v urah",
+                        "izstop_ure": "(float) Čas za izstop v državo za tovorna vozila v urah"
+                    }
+                }
+            }
+        ],
+        "ostalo": [
+            {
+                "več": "(string) Dodatne pomembne informacije (npr. posebne omejitve, opozorila)"
+            }
+        ]
+    }
+]

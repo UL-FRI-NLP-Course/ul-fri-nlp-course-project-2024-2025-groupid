@@ -3,7 +3,6 @@ import torch
 import os
 import json
 
-#model_path = "cjvt/GaMS-9B-Instruct"
 model_path = "/d/hpc/home/ak84795/NLP/models/combo2/checkpoint-20"
 examples_path = "/d/hpc/home/ak84795/NLP/data/eval.json"
 

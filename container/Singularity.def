@@ -1,0 +1,15 @@
+Bootstrap: docker
+From: pytorch/pytorch:2.6.0-cuda12.6-cudnn9-devel
+
+%post
+    apt-get update && apt-get install -y python3-pip git
+    pip install --upgrade pip
+    mkdir -p /workspace
+
+%environment
+    export TRANSFORMERS_CACHE=/d/hpc/home/ak84795/NLP/cache
+    export HF_HOME=/d/hpc/home/ak84795/NLP/hf_home
+    export PYTHONUNBUFFERED=1
+
+%runscript
+    exec python3 "$@"

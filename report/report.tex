@@ -18,13 +18,13 @@
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
-/documentclass[fleqn,moreauthors,10pt]{ds_report}
-/usepackage[english]{babel}
-/usepackage{tabularx}
-/usepackage{lipsum,booktabs}
-/usepackage{float}
+\documentclass[fleqn,moreauthors,10pt]{ds_report}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{lipsum,booktabs}
+\usepackage{float}
 
-/graphicspath{{fig/}}
+\graphicspath{{fig/}}
 
 
 
@@ -34,205 +34,210 @@
 %----------------------------------------------------------------------------------------
 
 % Header
-/JournalInfo{FRI Natural language processing course 2021}
+\JournalInfo{FRI Natural language processing course 2025}
 
 % Interim or final report
-/Archive{Project report} 
-%/Archive{Final report} 
+\Archive{Project report} 
+%\Archive{Final report} 
 
 % Article title
-/PaperTitle{Automatic generation of Slovenian traffic news for RTV Slovenija} 
+\PaperTitle{Automatic generation of Slovenian traffic news for RTV Slovenija} 
 
 % Authors (student competitors) and their info
-/Authors{Katarina Gojković, Alen Kurtagić, and Žan Terplan}
+\Authors{Katarina Gojković, Alen Kurtagić, and Žan Terplan}
 
 % Advisors
-/affiliation{/textit{Advisors: Slavko Žitnik}}
+\affiliation{\textit{Advisors: Slavko Žitnik}}
 
 % Keywords
-/Keywords{Traffic report, LLM}
-/newcommand{/keywordname}{Keywords}
+\Keywords{Traffic report generation, LLM, Fine-tuning}
+\newcommand{\keywordname}{Keywords}
 
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-/Abstract{/
+\Abstract{This project explores the automatic generation of traffic news for RTV Slovenija using large language models. We investigate prompt-based and fine-tuned approaches to generate radio-style reports from structured traffic data. After extensive prompt engineering, we fine-tune the GaMS-9B-Instruct model using QLoRA for parameter-efficient training. Our dataset includes structured incident records paired with human-written reports. To enhance output quality, we employ structured JSON inputs and chain-of-thought reasoning. Evaluation reveals that fine-tuned models outperform prompt-based ones in both BLEU scores and factual accuracy, with the standard fine-tuned model yielding the most reliable outputs. Challenges such as inconsistent event hierarchy and ambiguous input data persist, emphasizing the need for improved data quality and representation.
 }
 
 %----------------------------------------------------------------------------------------
 
-/begin{document}
+\begin{document}
 
 % Makes all text pages the same height
-/flushbottom 
+\flushbottom 
 
 % Print the title and abstract box
-/maketitle 
+\maketitle 
 
 % Removes page numbering from the first page
-/thispagestyle{empty} 
+\thispagestyle{empty} 
 
 %----------------------------------------------------------------------------------------
 %	ARTICLE CONTENTS
 %----------------------------------------------------------------------------------------
 
-/section*{Introduction}
+\section*{Introduction}
 
-Large Language Models (LLMs) have revolutionized natural language processing (NLP) by achieving state-of-the-art performance across a wide range of tasks, including text generation, translation, and summarization. Models like GPT-3 /cite{brown2020languagemodelsfewshotlearners} and BERT /cite{devlin-etal-2019-bert} have transformed the field by demonstrating advanced capabilities in processing and generating human-like text. However, despite their success, LLMs face challenges in less spoken languages with low resources.
+Large Language Models (LLMs) have revolutionized natural language processing (NLP) by achieving state-of-the-art performance across a wide range of tasks, including text generation, translation, and summarization. However, despite their success, LLMs face challenges in less spoken languages with low resources. In this project we utilized this technology to automatically generate traffic reports and tried to overcome its challenges. 
 
-/section*{Related Work}
+\section*{Related Work}
 
-LLMs have been increasingly used in automated news generation domains, especially in fields like finance, sports, and weather reporting. Despite this, traffic news generation is still a fairly unexplored area. However, some studies have explored this topic, for example, Wan et al. /cite{wan2020empoweringrealtimetraffic} leveraged social media data to complement traditional traffic reporting systems. Ouyang et al. /cite{ouyang2024trafficgptmultiscaletrafficanalysis} used AI agents to process multi-scale traffic data, conduct analysis and generate suggestions.
+LLMs have been increasingly used in automated news generation domains, especially in fields like finance, sports, and weather reporting. Despite this, traffic news generation is still a fairly unexplored area. However, some studies have explored this topic, for example, Wan et al. \cite{wan2020empoweringrealtimetraffic} leveraged social media data to complement traditional traffic reporting systems. Ouyang et al. \cite{ouyang2024trafficgptmultiscaletrafficanalysis} used AI agents to process multi-scale traffic data, conduct analysis and generate suggestions.
 
 Besides traffic news generation, data-to-text generation in general has seen significant advancements with the application of neural network architectures. Several recent studies have explored different methodologies for improving the quality and accuracy of generated text from structured data.
 
-One key advancement in data-to-text generation is the incorporation of entity modeling. Puduppully et al. (2019) /cite{puduppully2019datatotextgenerationentitymodeling} proposed an entity-centric neural architecture that dynamically updates entity-specific representations and employs hierarchical attention for generating coherent and factually accurate text. Their approach outperformed existing models on both the benchmark ROTOWIRE dataset and a newly introduced baseball dataset, demonstrating improvements in content selection and text fluency.
+One key advancement in data-to-text generation is the incorporation of entity modeling. Puduppully et al. (2019) \cite{puduppully2019datatotextgenerationentitymodeling} proposed an entity-centric neural architecture that dynamically updates entity-specific representations and employs hierarchical attention for generating coherent and factually accurate text. Their approach outperformed existing models on both the benchmark ROTOWIRE dataset and a newly introduced baseball dataset, demonstrating improvements in content selection and text fluency.
 
-Another significant development in the field has been the comparison between pipeline and end-to-end architectures. Castro Ferreira et al. (2019) /cite{ferreira2019neuraldatatotextgenerationcomparison} systematically compared neural pipeline models with end-to-end approaches for generating text from RDF triples. Their findings indicated that pipeline models, which introduce explicit intermediate steps, produce more fluent and accurate text than end-to-end models. Additionally, the pipeline approach was found to generalize better to unseen inputs, reinforcing the notion that structured intermediate representations play a crucial role in high-quality text generation.
+Another significant development in the field has been the comparison between pipeline and end-to-end architectures. Castro Ferreira et al. (2019) \cite{ferreira2019neuraldatatotextgenerationcomparison} systematically compared neural pipeline models with end-to-end approaches for generating text from RDF triples. Their findings indicated that pipeline models, which introduce explicit intermediate steps, produce more fluent and accurate text than end-to-end models. Additionally, the pipeline approach was found to generalize better to unseen inputs, reinforcing the notion that structured intermediate representations play a crucial role in high-quality text generation.
 
-Curriculum learning has also been explored to enhance data-to-text generation, particularly in cross-lingual and noisy data settings. Hari et al. (2024) /cite{hari2024curriculumlearningcrosslingualdatatotext} introduced an approach that applies curriculum learning principles by ordering training samples based on an alignment score and using an annealing schedule. Their method resulted in significant improvements in BLEU scores and faithfulness metrics across multiple Indian languages and English.
+Curriculum learning has also been explored to enhance data-to-text generation, particularly in cross-lingual and noisy data settings. Hari et al. (2024) \cite{hari2024curriculumlearningcrosslingualdatatotext} introduced an approach that applies curriculum learning principles by ordering training samples based on an alignment score and using an annealing schedule. Their method resulted in significant improvements in BLEU scores and faithfulness metrics across multiple Indian languages and English.
 
-A recent study by Zhang et al. (2024) /cite{zhang2025data} proposed optimized LLMs tailored for medical record generation, incorporating data augmentation techniques and domain-specific customization. Their models significantly improved faithfulness scores compared to state-of-the-art general models, demonstrating the importance of high-quality annotated data in generating accurate medical records. 
+A recent study by Zhang et al. (2024) \cite{zhang2025data} proposed optimized LLMs tailored for medical record generation, incorporating data augmentation techniques and domain-specific customization. Their models significantly improved faithfulness scores compared to state-of-the-art general models, demonstrating the importance of high-quality annotated data in generating accurate medical records. 
 
 Overall, these studies highlight various approaches to improving data-to-text generation, from entity modeling and pipeline architectures to curriculum learning and domain-specific optimizations. 
 
-/begin{table*}[h!]
-/centering
-/caption{Candidate models}
-/label{tab}
-/begin{tabular}{@{}p{4cm}lllll@{}}
-/toprule
-/multicolumn{1}{}{}Metric & Architecture & Size & Slovene & Instruct-tuned //
-/midrule
-GaMS-1B-Chat /cite{GaMS1BChat} & Decoder & Medium  & Yes & Yes //
-Mixtral-8x7B-Instruct & Decoder & XL & Yes & Yes  //
-mt0-large & Encoder-Decoder & Medium & Yes & Yes  //
-aya-101 & Decoder & XL & Yes & Yes &  //
-Llama-3.1-8B & Decoder & XL & Partial & Partial  //
-gemma-2b-it & Decoder & Medium & Partial & Yes //
-t5-sl-small & Encoder-Decoder  & Small & Yes & No //
-/bottomrule
-/end{tabular}
-/end{table*}
+\section*{Data}
 
-/section*{Proposed Approach}
+\subsection*{Dataset}
 
-/subsection*{Model Selection Criteria}
-Selecting an appropriate pre-trained language model is a critical step in designing any language generation system. Especially for specialized data-to-text tasks such as generating Slovenian traffic news reports. LLMs differ significantly in terms of architecture, size, multilingual support, and their ability to follow natural language instructions, all of which must be considered. 
+The dataset used for fine-tuning was provided by RTV Slovenija and consists of structured traffic data paired with manually written broadcast reports. It comprises three Excel sheets, each containing approximately 50,000 entries for the years 2022, 2023, and 2024. Each sheet documents real-time traffic incidents using 27 attributes, including affected roads, incident types, severity, and timestamps. Additionally, the dataset contains around 28,000 textual traffic reports composed by human operators for radio broadcasting. These reports aim to summarize the traffic state in a concise and informative manner.
 
-Firstly, since our input consists of structured data, we consider the encoder-decoder architecture to be the most suitable for this task. Unlike classical text generation, data-to-text generation benefits from models that can explicitly encode the input structure before producing the output. In encoder-decoder models, the encoder processes the input data into a meaningful representation, which the decoder then uses to generate a coherent output. This separation often leads to better consistency and can help reduce hallucinations. That said, we do not rule out the use of decoder-only architectures, especially given their recent success in following instructions.
+\subsection*{Preprocessing}
 
-Since the model will not be deployed on embedded or resource-constrained devices, there is no strict requirement for it to be extremely lightweight. At the same time, the task does not demand highly creative or open-ended text generation, which is where larger models typically excel. Furthermore, the inference time requirements are relatively relaxed, as traffic news reports are generated on a fixed schedule (e.g., every 30 minutes) and not in real-time. Therefore, a mid-sized model that balances performance, generation quality, and reasonable inference time is likely to be the most appropriate choice for this application.
+To prepare the dataset for fine-tuning, we first examined its structure and addressed several inconsistencies. The main finding about the dataset was that while reports are marked with Slovenian local time (UTC +2), eateries in excel are marked with UTC time. After this finding we were able to successfully pair eateries with the reports. After paring data from excel with groundtruth reports we removed embedded markup language. Furthermore, we restructured the data based on semantic categories. This restructuring facilitates clearer representation provides a foundation for generating higher-level abstractions, such as JSON objects describing the state of Slovenian traffic.
 
-One of the most important factors for this task is the model's ability to generate text in Slovenian, a low-resource language with limited available training data. Due to this limitation, it is common practice to first pretrain multilingual models on high-resource languages such as English, and then fine-tune them on smaller languages. While the exact mechanisms behind this transfer are complex, the shared linguistic patterns among languages can enable the model to generalize better. In the case of Slovenian, additional training data from closely related South Slavic languages (such as Croatian, Bosnian, and Serbian) are often used to improve performance, as these languages share similar vocabulary /cite{Vres2024Generative}.
+\section*{Initial Approach and Ideas}
+Our initial attempt to generate structured traffic reports relied on prompt engineering. We began by testing GaMS-1B, GaMS-9B, Llama 3.1 8B, and mt0-large using a series of prompts. The initial prompts included simple questions about the weather or traffic, as well as similar questions paired with structured data, instructing the models to use the provided data when responding. While all models produced responses, they frequently included fabricated information. These initial tests revealed notable differences in the models' ability to process and apply the input data effectively. \textbf{GaMS-1B and GaMS-9B} produced verbose and often irrelevant responses, with GaMS-9B occasionally generating natural-sounding but fabricated content. \textbf{Llama 3.1 8B} demonstrated some precision but frequently generated generic or grammatically incorrect Slovenian outputs. Lastly, \textbf{mt0-large} struggled with coherence and frequently repeated phrases, particularly in Slovenian.
 
-Another important consideration is the choice between base models and instruction-tuned models. Base models, such as the original versions of GPT, T5, or BLOOM are trained to predict the next word in a sequence without any explicit understanding of task-specific instructions. As a result, they function more like autocomplete systems and are not suitable for tasks such as answering questions and summarizing. In contrast, instruction-tuned models, such as ChatGPT, FLAN-T5, or BLOOMZ have been further fine-tuned on datasets containing natural language instructions paired with expected outputs. This enables them to follow prompts like "summarize this," "translate this," or, in our case, "generate a report from this data." Since our task depends on instruction-driven behavior and will involve additional fine-tuning on report generation instructions, we focus our selection to mostly instruction-tuned models.
+Following these observations, we experimented with seven distinct prompt designs to improve the structure and coherence of the outputs, utilizing data from the accrual dataset provided by RTV Slovenija. These prompts ranged from basic formats to highly detailed instructions emphasizing event prioritization, road terminology, and concise phrasing. Testing across structured and semi-structured data revealed that while strict formatting improved model performance, significant challenges—such as omissions, fabricated information, and language inconsistencies—remained, highlighting the need for fine-tuning.
 
-Table~/ref{tab} lists the models selected as initial candidates for experimentation and potential fine-tuning, based on the outlined criteria.
+In retrospect, a critical oversight during this phase was our use of the standard GaMS models instead of their Instruct variants, which are specifically designed for structured tasks. Upon realizing this, we tested GaMS-9B-Instruct and ultimately selected it for fine-tuning.
 
-/subsection*{Prompt Engineering}
+\subsection*{Structured Inputs}
 
-Before applying fine-tuning techniques, we will first explore whether Slovenian traffic report generation can be effectively solved using prompt engineering. We will employ role-based prompting, where we explicitly assign the model the role of a traffic reporter, and few-shot prompting, where we provide examples to guide the output. The structured prompt follows:
+While the original CSV data was comprehensive, it was also messy, inconsistent, and based on outdated conventions. To enable more robust and modern data handling, we adopted JSON as the standard input format. JSON provides a clean and structured way to represent state, and is widely used in contemporary machine learning pipelines. In addition to using the unstructured text reports, we manually generated structured JSON counterparts for each example. This enables our system to accept both unstructured natural language inputs and structured data formats and transition between the two.
 
-/begin{quote}
-/textit{You are a traffic reporter. Generate a concise report based on the following data.} // 
+\subsection*{Chain-of-Thought Reasoning}
 
-/textit{Example 1: (Structured Data) $/rightarrow$ (Formatted Report)} //
-/textit{Example 2: (Structured Data) $/rightarrow$ (Formatted Report)} //
-/textit{Now generate a report for: (Structured Data)}
-/end{quote}
+To encourage more accurate and grounded outputs, we incorporated chain-of-thought (CoT) reasoning into the dataset. Prior work has shown that explicitly modeling intermediate reasoning steps can reduce hallucinations and improve factual consistency in large language models. To this end, we generated synthetic \texttt{reasoning} fields in the training JSON, describing intermediate inferences about the traffic state.
 
-Additionally, we will explore step-by-step prompting, where the task is explicitly broken down into sequential steps, and chain-of-thought prompting, where the model is encouraged to reason through its output before generating a response.
+These fields were then integrated into the training prompts using a dedicated marker (e.g.,  \textit{"Thinking:"}), inserted between the input and the final output. By exposing the model to this intermediate step, we aimed to help it internalize the structure of logical inference and better justify its output in tasks involving complex traffic states.
 
-/subsection*{Dataset}
+\section*{Implementation}
+\subsection*{Setup}
+To fine-tune our model, we first ensured access to GPUs with sufficient VRAM. This was accomplished using the Arnes HPC cluster, which provided access to NVIDIA A100 (40GB VRAM) and H100 (80GB VRAM) GPUs. For a consistent and reproducible environment, we utilized a Singularity container. Singularity is particularly suited for HPC environments, offering isolated environments similar to Docker, but with better support for cluster-based workflows.
 
-The dataset for fine-tuning our selected model is provided by RTV Slovenija and consists of structured traffic data paired with human-written reports. It includes a table with approximately 50 thousand entries, each describing real-time traffic incidents through 27 attributes such as affected roads, incident type, severity, and timestamps. Additionally, it contains around 28 thousand manually composed textual reports, which summarize traffic conditions in a concise and informative manner for radio broadcasting.
+\subsection*{QLoRA}
+With the environment prepared, we employed Quantized Low-Rank Adaptation (QLoRA) to fine-tune our large language model, implemented by the PEFT (Parameter-Efficient Fine-Tuning) Python package. QLoRA is a parameter-efficient fine-tuning technique that combines two key strategies:
 
-/section*{Implementation}
+\begin{itemize}
+  \item \textbf{Double Quantization:} Model weights are first quantized to 4-bit representations using the NormalFloat4 format, significantly reducing memory usage. Rather than storing full-precision values, each weight is mapped to a codebook index:
+  \[
+  q(w) = \arg\min_{i} |w - C_i|
+  \]
+  where \( C \) is a codebook of 4-bit quantized float values. To further reduce memory, the codebook itself is quantized using a second codebook:
+  \[
+  C_i = C'_j \text{ where } j = \arg\min_{j} |C_i - C'_j|
+  \]
+  This process allows the storage of codebook entries as low-bit indices into a smaller, full-precision codebook \( C' \), thus enabling compression of both weights and codebooks.
 
-/subsection*{Data Preprocessing}
-Our first step was to thoroughly examine the provided data and preprocess it to make it suitable for prompt engineering and potential fine-tuning. We found the raw data to be somewhat inconsistent and difficult to work with, which required significant cleaning and restructuring.
+  \item \textbf{Low-Rank Adaptation (LoRA):} Instead of updating all parameters in a large neural network, LoRA introduces low-rank matrices \( A \in \mathbb{R}^{d \times r} \) and \( B \in \mathbb{R}^{d' \times r} \), where \( r \ll \min(d, d') \). These matrices adapt the frozen weights:
+  \[
+  \Delta W \approx A B^T
+  \]
+  and the updated weight is computed as:
+  \[
+  W' = W + \Delta W = W + A B^T
+  \]
+  This significantly reduces the number of trainable parameters while still allowing effective adaptation.
+\end{itemize}
 
-To standardize the input format, we removed the embedded markup language and created a unified .jsonl file. In this format, each entry groups all traffic events occurring between two reports. For example, events from 00:01 to 00:30 are assigned to the 00:30 report, while events after 00:30 are linked to the next one (e.g., 01:00).
+QLoRA allows us to efficiently adapt a 9-billion parameter model using a single A100 GPU. The 4-bit quantization, coupled with double quantization and other advanced features ensures memory efficiency and training stability.
 
-In addition, we restructured the information by category, rather than relying solely on the A1 and B1 columns. This approach enables more structured inputs and could later allow us to identify which events were cancelled or are no longer valid. In doing so, we have laid the groundwork for generating even more structured representations—such as JSON objects or knowledge graphs that capture the overall state of Slovenian traffic.
+\subsection*{Hyperparameters}
 
-/subsection*{Observing Base Models}
+To train the model efficiently using QLoRA, we carefully selected training hyperparameters that balance resource constraints and convergence quality. Our setup utilizes gradient accumulation, enabling fine-tuning even on a single A100 GPU.
 
-To determine the most suitable model for further steps, including fine-tuning, we performed prompt engineering on four models: GaMS-1B, GaMS-9B, Llama 3.1 8B, and mt0-large. We began our exploration with a series of basic prompts to evaluate the models' general performance in simple, unrestricted scenarios. For instance, we used questions such as "Kakšno je vreme danes?" and "Kakšno je stanje v prometu?" to gauge their ability to provide relevant and coherent answers. While all models produced responses related to the questions, the information was fabricated, indicating a need to introduce structured input data.
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Hyperparameter} & \textbf{Value} \\
+\hline
+Base model & GaMS-9B-Instruct \\
+LoRA rank & 128 \\
+LoRA alpha & 256 \\
+LoRA dropout & 0.1 \\
+Quantization & 4-bit \\
+Compute dtype & bfloat16 \\
+Batch size & 1 \\
+Gradient accumulation steps & 64 \\
+Learning rate & $5 \times 10^{-5}$ \\
+Weight decay & 0.02 \\
+Optimizer & Paged adam \\
+Learning rate scheduler & Linear \\
+Warmup steps & 6 \\
+Training epochs & 10 \\
+\hline
+\end{tabular}
+\caption{Key hyperparameters used for QLoRA fine-tuning.}
+\end{table}
 
-In response, we provided the models with specific data to guide their answers. For example, we supplied weather information such as "Povprečna temperatura v Sloveniji: 20 stopinj. Ljubljana: sončno, 22 stopinj." and traffic data such as "Na primorski avtocesti proti Ljubljani prometna nesreča. Nastaja zastoj." This adjustment highlighted substantial differences in the models' behaviors and their ability to process and apply the given data.
+\subsection*{Implementation Details}
+To focus training on the intended output (e.g., a JSON or traffic report), we masked all non-target tokens in the label tensor using \texttt{-100}, which excludes them from loss computation in the \textit{transformers} library.
 
-GaMS-1B provided responses that were lengthy and verbose, often including additional irrelevant details unrelated to the input data, but are related to the topic. GaMS-9B displayed similar tendencies, generating extensive but largely irrelevant responses and occasionally introducing fictional information. Llama 3.1 8B demonstrated a partial ability to utilize the provided data but frequently produced overly generic or nonsensical outputs, revealing a lack of precision. Also Llama model frequently generated sentences that were grammatically incorrect in Slovenian. mt0-large, while concise, struggled with coherence and repeated phrases, as seen in its output for traffic data prompts. It sometimes struggled with Slovenian language.
+We tokenized both the full input (instruction + input + target) and a truncated version containing only the instruction and input. Tokens belonging to the truncated version were then masked in the labels, ensuring the model learns solely from the output portion without being influenced by the instruction or input.
 
-We incorporated weather-related questions into our tests to observe how the models performed in other domains. This helped us evaluate their versatility and robustness in handling different types of queries.
+\section*{Evaluation}
+\subsection*{Empirical Evaluation}
+To evaluate our two approaches, we compared them with zero-shot and two-shot methods, using the most effective prompt identified during the prompt engineering phase. The evaluation involved manually reviewing the outputs to assess their language quality, adherence to the input data, alignment with the ground truth reports, and compliance with RTV Slovenija’s report-writing guidelines.
 
-Building on this initial evaluation, we proceeded with refining the prompt design and testing more sophisticated prompts. These new prompts included additional details and constraints specifically tailored for report generation. This iterative process allowed us to systematically enhance the models' ability to generate structured, accurate, and contextually appropriate outputs.
+The zero-shot and two-shot methods were initially evaluated to establish a baseline for comparison. The zero-shot method often failed to maintain proper sentence structure and formulation, instead resorting to listing events with little mention of consequences. Occasionally, it adhered to sentence structures, but only when these were directly present in the input data. A major limitation of the zero-shot approach was its tendency to omit data, fabricate information, or produce incoherent reports. Despite explicit instructions in the prompt on event hierarchy and sentence formulation, these were frequently ignored. Moreover, this method sometimes redundantly repeated events, particularly when multiple consequences were associated with a single event. The two-shot method demonstrated notable improvements in sentence structure and formulation. However, it continued to generate incomplete or nonsensical reports and often inventing events. 
 
-/subsection*{Prompt Engineering}
+Fine-tuning the model resulted in significant improvements. Outputs exhibited better sentence structure and formulation, closely resembling those of the groundtruth reports, but with occasional deviations. For example, while the fine-tuned model sometimes included locations of events, such as specific highway exit, but sometimes highway section, the guidelines stat that road sections should be used. Groundtruth reports themselves were inconsistent in this regard, potentially confusing the model. While the fine-tuned model was successful in determining the hierarchy of the events such as accidents and traffic jams, which are the most often occurred ones, it occasionally misjudged other events hierarchies, favoring the sequence of events in the input data. Also it sometimes omitted consequences if they were not explicitly stated, as well as the detour information. Despite these issues, the main benefit of the fine-tuned model is that it did not fabricate data.
 
-After extensive testing and iterative refinements, we identified seven distinct prompts that provided the most promising results for generating structured, concise, and accurate traffic reports in Slovenian to use them in evaluation. Each prompt adhered to specific formatting and content requirements. Prompt 1 introduced a basic structure by providing an example groundtruth report along with the necessary data, focusing on producing concise summaries without redundancy. Prompt 2 emphasized a strict order of importance (wrong-way driving, accidents, traffic jams, road obstacles, and border crossings), with precise terminology for roads and directions, a six-sentence limit, specific sentence formulations, and prohibited words. Prompt 3 provided a model structure and examples of correct reports, ensuring events were sequenced by priority and avoiding repetition. Prompt 4 reinforced similar rules while adding detailed guidelines on road terminologies and standard expressions, requiring adherence to official naming conventions for Slovenian roads. This prompt offered the most comprehensive instructions and examples. Prompt 5 prioritized exact sequencing and formal descriptions of incidents using predefined sentence structures without providing examples. Prompt 6 focused on specific language rules, clarifying terms like "slow lanes" and "covered tunnels" to ensure professional phrasing and accurate geographical references, supported by two examples of data and correct reports. Lastly, Prompt 7, written in English but requiring Slovenian reports, mandated the use of only two predefined sentence structures, eliminating non-essential phrasing and repetitive details while maintaining clarity.
+% The Chain-of-Thought (CoT) approach was also tested and evaluated. While it excelled in identifying nuanced patterns, such as emergency details or highway directions (e.g., translating border directions into country-specific terms as per instructions), its overall performance was inferior to the standard fine-tuned model.
+The Chain-of-Thought (CoT) approach captured nuanced patterns (e.g., border directions) but overall performed worse than the standard fine-tuned model.
+The CoT method often fabricated event details or even entire events, likely due to its step-by-step reasoning, amplifying ambiguity in sparse inputs, causing the model to "fill gaps" incorrectly. 
 
-The evaluation process involved testing these seven prompts with three data formulations. First, the complete dataset for a single report was used, obtained from the preprocessing step. Second, reports were generated based on one piece of information at a time. Finally, clean data without repeated information or additional tags about the event (e.g., "OVIRE," "ZASTOJI," "MEJNI PREHODI," "POMEMBNO") was tested. This comprehensive approach ensured a thorough assessment of each prompt's effectiveness.
+A persistent challenge across all methods was handling missing or inconsistently presented data in the input. Ground truth reports often included details absent from the input data or rephrased time-bound restrictions (e.g., “today” or “yesterday” instead of specific dates and hours). Addressing this issue might require incorporating explicit report timestamps into the input data. Overall, we believe that the performance of all models, especially the fine tuned ones can be improved a lot by improving input data.
 
-/section*{Evaluation}
+\subsection*{Evaluation using metrics}
+% To quantitatively assess model performance, we customize the BLEU metric configuration to compare generated traffic reports with ground truth annotations. We select specific weights and a smoothing function to better reflect the structure and meaning of our texts.
 
-/subsection*{Empirical evaluation}
+To quantitatively assess performance, we use a customized BLEU metric with tuned weights and smoothing to reflect the structure and meaning of traffic reports. Table~\ref{tab:bleu-results} summarizes BLEU scores across different evaluation settings.
 
-To better understand how language models handle the generation of traffic reports under varying data quality and formatting constraints, we evaluated the four models (GaMS-1B, GaMS-9B, Llama 3.1 8B, and mt0-large) on seven distinct above-described prompts.
+\begin{table}[h]
+\centering
+\begin{tabular}{l r}
+\toprule
+\textbf{Method} & \textbf{BLEU Score} \\
+\midrule
+Prompt-based (zero-shot)              & 0.192 \\
+Prompt-based (two-shot)               & 0.284 \\
+Fine-tuned                            & 0.343 \\
+Fine-tuned (Chain-of-Thought)         & 0.310 \\
+\bottomrule
+\end{tabular}
+\caption{BLEU scores for different evaluation methods. Prompt-based methods rely only on prompting without parameter updates; fine-tuned methods are trained on the dataset.}
+\label{tab:bleu-results}
+\end{table}
 
-The models showed clear differences in performance when generating traffic reports. Llama 3.1 8B performed best overall, producing well-structured and informative outputs with the fewest grammatical errors, though it occasionally introduced unnecessary information or repeated content. GaMS-1B and GaMS-9B both struggled with relevance and information fidelity. GaMS-1B often produced overly brief reports missing key details, while GaMS-9B tended toward verbose and off-topic outputs, sometimes inventing events and showing coherence issues. mt0-large performed poorly, frequently generating irrelevant, repetitive, or nonsensical content regardless of prompt design. Only Llama responded reliably to prompts with structured formatting and demonstrated some consistency in following language and structure requirements. Across all models, prompt specificity was crucial - especially for GaMS models, which required very detailed instructions to achieve partial compliance.
+The results show a clear advantage for fine-tuned models over prompt-based methods. The highest score is achieved by the fine-tuned model without additional reasoning steps, confirming that direct learning from structured examples leads to more reliable, concise, and task-specific outputs. It consistently includes correct phrases (e.g., "zaradi nesreče je zaprt prehitevalni pas"), proper road names (e.g. "štajerska avtocesta") and rarely hallucinates or omits important details. This strong alignment with reference texts boosts both n-gram overlap and BLEU score. The fine-tuned CoT model performs slightly worse, likely due to verbosity and over-structuring. While it improves clarity in complex cases (e.g., multi-incident reports), it sometimes adds redundant phrases or deviates slightly in wording (e.g., "trčenje" instead of "prometna nesreča"), which lowers precision. The two-shot method benefits from imitating formatting in the examples but remains inconsistent in terminology and may omit key details like directions (e.g. "proti Ljubljani"). The zero-shot method performs worst, frequently violating domain conventions, hallucinating content, and introducing irrelevant sections. It struggles with both structure and keyword alignment, resulting in the lowest BLEU score.
 
-The evaluation across various prompt types revealed consistent performance patterns among the models. Llama 3.1 8B performed best in structured prompts with strict formatting requirements (Prompts 2, 4, 6, 7), generally adjusting to the defined hierarchies and traffic terminology. However, it occasionally missed important elements or relevant details when overly constrained by formatting requirements. In contrast, the GaMS models struggled across the board — particularly in open-ended prompts (Prompts 1, 3, 5), producing verbose, often irrelevant outputs, frequently ignoring instructions and making events up, or including unrelated information. On the other hand, GaMS-9B produced more fluid and natural-sounding text, which could be beneficial in open-ended prompts. mt0-large consistently fails to meet even basic task requirements, either by copying prompt instructions or generating incoherent and unusable text. The findings emphasize that structured prompting improves output reliability, but also highlight the need for targeted fine-tuning to address omissions, made-up information, and grammatical correctness. These limitations are especially critical for real-world deployment, where clarity and precision are essential.
+We applied weights of (0.3, 0.4, 0.2, 0.1), which assign the highest importance to 2-gram and 1-gram matches respectively, giving more importance to key words and short phrases. This helps the evaluation focus on important content like location names (e.g., "Ljubljana", "Karavanke"), road types (e.g., "gorenjska avtocesta", "hitra cesta"), and traffic-related terms (e.g., "nesreče", "zaprt pas"). The smaller weights on 3-gram and 4-gram matches allow some flexibility in word order and phrasing. This is important for our task, where different sentence structures can still carry the same meaning.
 
-/subsection*{Evaluation using metrics}
+We used \textit{method3} from the NLTK's SmoothingFunction, which helps prevent a BLEU score of zero when there is no overlap in higher-order n-grams. It does this by adding small values to the n-gram counts. This makes it more suitable for short texts than method4, which adds smoothing uniformly, and method5, which is too forgiving and can inflate scores for incomplete output. This balance is useful for our setting, where correct reports may still phrase things differently from the reference output. Using smoothing helps ensure that these cases are not unfairly penalized.
 
-We employed the BLEU (Bilingual Evaluation Understudy) metric to quantitatively evaluate the quality of generated traffic reports. BLEU measures the similarity between model-generated text and human reference translations by comparing their n-gram patterns. Our implementation assessed matches from 1-grams (individual words) to 4-grams (four-word phrases), with equal weighting for each n-gram level. The metric aligns with traffic reporting needs, where both keyword accuracy (e.g., location names) and multi-word expressions (e.g., "zaprt vozni pas") are critical.
+\section*{Conclusion}
 
-/begin{table}[h!]
-/centering
-/setlength{/tabcolsep}{6pt}
-/renewcommand{/arraystretch}{1}
-/caption{BLEU scores for different models using Prompt 7.}
-/begin{tabular}{cc}
-/toprule
-Model & BLEU //
-/midrule
-GaMS-1B & 0.050 //
-GaMS-9B & 0.061 //
-Llama-3.1-8B & 0.205//
-mt0-large & 0.041 //
-/bottomrule
-/end{tabular}
-/label{tab:table2}
-/end{table}
-
-The BLEU scores (Table~/ref{tab:table2}) support our empirical findings, with Llama 3.1 8B clearly outperforming the other models. Its score of 0.205 reflects stronger compliance with prompt instructions and better structure compared to other models. GaMS-9B slightly outperforms GaMS-1B, though both remain low overall. Notably, GaMS-9B reached its peak performance of 0.11 on Prompt 2, which involved more structured guidance. This suggests that GaMS-9B may show some potential under stricter prompting or with targeted fine-tuning. mt0-large scores the lowest, reinforcing its observed failure to generate coherent or relevant content. These results suggest Llama 3.1 8B or GaMS-9B hold the most promise for generating traffic reports but requires fine-tuning, while the other models show limited suitability for this task in their current forms.
-
-/section*{Future Work}
-
-/subsection*{Challenges}
-
-A significant challenge with generating traffic reports using LLMs stems from inconsistencies in the provided data from RTV Slovenia. In the Excel data sheets, some critical information is occasionally missing. For example, there are cases where the data indicates waiting times at border crossings ("na mejnem prehodu je čakalna doba") without specifying the duration of the wait. In other instances, entire events are missing from the dataset altogether. Conversely, some events recorded in the Excel table for a given time window are not mentioned in the corresponding traffic report.
-
-Another issue arises from reports including events that occurred in previous time frames but should now be canceled in the current report. To address these challenges, further data preprocessing steps will be necessary to align events with their appropriate time frames and ensure that all relevant information is accurately reflected in reports. This includes handling incomplete data, reconciling discrepancies between the dataset and the reports, and ensuring that events from previous time frames are appropriately updated or removed.
-
-
-/subsection*{Structured Data Integration}
-
-To address data inconsistencies, we propose integrating structured inputs such as JSON schemas or knowledge graphs to represent traffic events in a consistent format. These structures allow for clear definition of event attributes (e.g., location, duration, type) and relationships, making it easier to manage event states—such as identifying and marking cancelled or outdated entries.
-
-/subsection*{Fine-Tuning}
-
-Our results show that while prompt engineering played a significant role in shaping the performance of the models, next steps like fine-tuning are crucial to improve the results. Llama 3.1 8B and GaMS-9B, while the strongest performers overall, still exhibited omissions and inconsistencies in details that could be addressed through fine-tuning on high-quality and structured traffic data. Another idea could involve fine-tuning the model with a mixture of structured and semi-structured prompts to better simulate real-world scenarios where reporting needs can vary in complexity. Prompts that offer some flexibility in structure could generate more complete and contextually accurate traffic reports. In conclusion, focusing on fine-tuning Llama 3.1 8B or GaMS-9B while refining prompt engineering seems to be the best approach to enhance its performance.
-
+This project demonstrates that fine-tuning the GaMS-9B-Instruct model on structured traffic data leads to noticeable improvements in the quality of automatically generated traffic news compared to prompt-based methods. The fine-tuned model tends to produce more concise and consistent reports with better use of terminology. However, evaluation results indicate that there is still considerable room for improvement, as issues like occasional inaccuracies and inconsistent phrasing persist. Incorporating CoT reasoning shows potential for handling complex cases but sometimes results in verbosity and minor errors. Overall, these findings highlight the benefits of domain-specific fine-tuning and structured input formats, as well as the efficiency of techniques like QLoRA for adapting large models on limited hardware. Future research could explore further optimization of output clarity and precision, as well as expanding model robustness across various traffic scenarios.
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
-/bibliographystyle{unsrt}
-/bibliography{report}
+\bibliographystyle{unsrt}
+\bibliography{report}
 
-
-/end{document}
+\end{document}

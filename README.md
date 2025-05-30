@@ -14,4 +14,4 @@
     ```bash
    sbatch ./jobs/inference.sh
 
-5. Outputs will be saved relative to the project directory in  `./logs/inference-<job_id>.txt` file
+5. Outputs will be saved (relative to the directoy you ran from) in the file: `./logs/inference-<job_id>.out` 
